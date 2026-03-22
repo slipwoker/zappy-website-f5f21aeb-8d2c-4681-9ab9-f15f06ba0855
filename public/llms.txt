@@ -1,0 +1,51 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+House of Silver היא הפלטפורמה הפרמיום לנשים עם שיער כסוף. קהילת Silver Sisters, מגזין יוקרתי, כלי העצמה וייעוץ מקצועי — כי כסוף זה לא גיל, זה אופנה.
+
+### אבחון וייעוץ
+https://example.com/diagnosis-consultation
+אבחון אישי וייעוץ מקצועי לשיער כסוף עם מיטל פרץ גולן. קבלי תוכנית מותאמת אישית שתעזור לך לזהור בביטחון ולהפוך את המעבר לחוויה מעצימה.
+
+### מגזין / מעבדת שיער
+https://example.com/magazine-hair-lab
+מעבדת השיער של House of Silver — מגזין דיגיטלי יוקרתי עם טיפים מקצועיים, טרנדים עולמיים וסיפורי השראה לנשים שבחרו לזהור בכסף. כנסי וגלי עולם חדש.
+
+### שיתופי פעולה
+https://example.com/collaborations
+House of Silver מזמינה מותגים, מומחיות ויוצרות תוכן לשיתופי פעולה ייחודיים. נגיע יחד לקהילה של 17,000 נשים עם שיער כסוף ונייצר השפעה אמיתית בעולם הביוטי.
+
+### צור קשר
+https://example.com/contact
+יש לך שאלה, רעיון או סתם רוצה להכיר? צרי קשר עם House of Silver ומיטל פרץ גולן ישמחו להכיר אותך. כי כל אישה מגיעה ללוות אישי בדרך לשיער הכסוף שלה.
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
