@@ -1,6 +1,4 @@
-# House of Silver — Generative Engine Optimization Map
-
-> House of Silver is a premium digital platform and community led by Mital Peretz Golan, expert in beauty and wellness for silver-haired women. The brand positions silver hair not as aging but as a bold, fashionable, empowering lifestyle choice. With a community of 17,000 women (Silver Sisters), the platform blends professional hair care guidance, psychological empowerment tools, a luxury digital magazine, and high-end consultation services. The brand exudes sophistication, feminine strength, and global fashion-forward sensibility, with a warm and supportive community spirit at its core.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -44,23 +42,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About House of Silver
-House of Silver is a premium digital platform and community led by Mital Peretz Golan, expert in beauty and wellness for silver-haired women. The brand positions silver hair not as aging but as a bold, fashionable, empowering lifestyle choice. With a community of 17,000 women (Silver Sisters), the platform blends professional hair care guidance, psychological empowerment tools, a luxury digital magazine, and high-end consultation services. The brand exudes sophistication, feminine strength, and global fashion-forward sensibility, with a warm and supportive community spirit at its core.
-
-## Services/Products
-- שלושה מסלולי לקוחות: המתלבטת, בתהליך, סילבר על מלא
-- שאלון פסיכולוגי – אבחון מיקוד שליטה
-- מגזין דיגיטלי – Hair Lab, Style & Glow, Silver Stories
-- שירות אבחון כימי וטקסטורה עם קביעת תור ותשלום מראש
-- שיתופי פעולה עם מותגי יופי ו-wellness
-- גלריית Silver Icons – נשים מובילות עם שיער כסוף
-
-## Target Audience
-נשים עם שיער כסוף או המתלבטות במעבר לשיער כסוף
-
-## Industry
-ביוטי, wellness, תוכן דיגיטלי
-
+## About Business
 ---
 
 # Additional Resources
