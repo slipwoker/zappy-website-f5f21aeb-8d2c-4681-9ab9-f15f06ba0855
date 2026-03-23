@@ -10232,6 +10232,62 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 /* /Zappy custom logo size */
 
 
+/* ── HERO SECTION ──────────────────────────────────────── */
+.index-hero-section .index-hero-eyebrow-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.index-hero-section .index-hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--background-color);
+}
+
+.index-hero-section .index-hero-h1-line2 {
+  background: linear-gradient(100deg, #E8E0D8 0%, var(--accent-color) 50%, #D4C9BA 100%);
+}
+
+.index-hero-section .index-hero-h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.8vw, 17px);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(248, 247, 245, 0.72);
+}
+
+.index-hero-section .index-hero-btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #D4C9BA 0%, var(--accent-color) 50%, #BCA88E 100%);
+  color: var(--text-color);
+  border-radius: 2px;
+  padding: 14px 36px;
+  box-shadow: 0 4px 24px rgba(200,184,162,0.28);
+}
+
+.index-hero-section .index-hero-btn-secondary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 184, 162, 0.38);
+  color: rgba(248, 247, 245, 0.85);
+  border-radius: 2px;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
