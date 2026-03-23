@@ -1299,9 +1299,9 @@ window.onload = function() {
       var currentPath = window.location.pathname;
       try { var pg=new URLSearchParams(window.location.search).get('page'); if(pg) currentPath=pg; } catch(x){}
 
-      var wid = 'f5f21aeb-8d2c-4681-9ab9-f15f06ba0855';
+      var wid = 'efabb15c-c81b-48ef-9227-ea4ddc7e1887';
 
-      var apiBase = (window.ZAPPY_API_BASE || 'https://qaapi.zappy5.com').replace(/\/$/,'');
+      var apiBase = (window.ZAPPY_API_BASE || 'https://api.zappy5.com').replace(/\/$/,'');
       apiBase = apiBase + '/api/email/contact-form';
 
       var payload={
