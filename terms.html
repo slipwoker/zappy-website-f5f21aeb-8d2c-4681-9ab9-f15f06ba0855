@@ -478,7 +478,7 @@
 
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-brand">
-          <img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo zappy-editable-image" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" data-resize-handler-attached="true" data-original-position="static" style="position: relative;">
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo zappy-editable-image" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" data-original-position="static" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
           <p class="footer-tagline" style="">יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
           <div class="footer-accent-line"></div>
         </div>
@@ -494,11 +494,11 @@
           <h4 class="footer-heading">יצירת קשר</h4>
           <ul class="footer-contact" style=""><li>
               <i class="fas fa-envelope footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-2epv7enkw" data-icon-type="fontawesome" style="cursor: pointer;"></i>
-              <a href="mailto:[business_email]">[business_email]</a>
+              <a href="/cdn-cgi/l/email-protection#83d8e1f6f0eaede6f0f0dce6eee2eaefde">[business_email]</a>
             </li><li>
               <i class="fas fa-phone footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-tm4wdty9h" data-icon-type="fontawesome" style="cursor: pointer;"></i>
               <a href="tel:[business_phone]">[business_phone]</a>
-            </li><li><a href="/"><br></a></li></ul>
+            </li><li><a href="/" style=""><br></a></li></ul>
         </div>
 
         <!-- Column 4: Social Media -->
@@ -585,6 +585,34 @@
           observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
         });
       }, 500);
+    })();
+    </script>
+
+    <script>
+    (function(){
+      if(window.innerWidth>768)return;
+      function fixZW(){
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          var cw=w.style.getPropertyValue('width');
+          if(!cw||cw==='100%')return;
+          w.style.setProperty('width','100%','important');
+          w.style.setProperty('max-width','100%','important');
+          w.style.setProperty('height','auto','important');
+          var img=w.querySelector('img');
+          if(img){
+            img.style.setProperty('position','relative','important');
+            img.style.setProperty('width','100%','important');
+            img.style.setProperty('height','auto','important');
+            img.style.setProperty('max-width','100%','important');
+            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('object-fit','cover','important');
+            img.style.setProperty('left','0','important');
+            img.style.setProperty('top','0','important');
+          }
+        });
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
+      else setTimeout(fixZW,50);
     })();
     </script>
 </body>
