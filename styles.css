@@ -140,14 +140,14 @@
 :root {
 --primary: #1A1A1A;
   --secondary: #8A8A8A;
-  --accent: #C8B8A2;
+  --accent: #C0C0C0;
   --bg-light: #FDFCFA;
   --bg-dark: #1A1A1A;
   --text-dark: #1A1A1A;
   --text-light: #F8F7F5;
   --text-muted: #6B6B6B;
-  --border-light: #8b8986;
-  --border-dark: #7b7b7b;
+  --border-light: #868686;
+  --border-dark: #A0A0A0;
   --nav-bg: transparent;
   --nav-text: #FAF8F4;
   --nav-text-hover: #B86B7A;
@@ -172,8 +172,8 @@
 
   --gradient-primary: linear-gradient(180deg, #737373 0%, #656565 100%);
   --gradient-secondary: linear-gradient(180deg, #F7F2EB 0%, #ECE3D8 100%);
-  --gradient-gold-shine: linear-gradient(90deg, #2A2A2A 0%, #D4C8B7 50%, #3B3B3B 100%);
-  --gradient-gold-accent: linear-gradient(180deg, #101010 0%, #CFC1AE 100%);
+  --gradient-gold-shine: linear-gradient(90deg, #2A2A2A 0%, #D1D1D1 50%, #3B3B3B 100%);
+  --gradient-gold-accent: linear-gradient(180deg, #101010 0%, #CACACA 100%);
   --gradient-dark-section: linear-gradient(180deg, #7C6570 0%, #5F434D 100%);
   --gradient-light-section: linear-gradient(180deg, #F7F3ED 0%, #EFE6DC 100%);
   --gradient-overlay-dark: linear-gradient(90deg, rgba(246,241,234,0.96) 0%, rgba(246,241,234,0.88) 48%, rgba(246,241,234,0.08) 100%);
@@ -181,7 +181,7 @@
   --nav-overlay-opacity: 0.55;
   --primary-color: #1A1A1A;
   --secondary-color: #8A8A8A;
-  --accent-color: #C8B8A2;
+  --accent-color: #C0C0C0;
   --background-color: #FDFCFA;
   --surface-color: #FDFCFA;
   --text-color: #1A1A1A;
@@ -772,14 +772,14 @@ textarea::placeholder {
   --nav-text-hover: #B86B7A;
   --primary: #1A1A1A;
   --secondary: #8A8A8A;
-  --accent: #C8B8A2;
+  --accent: #C0C0C0;
   --bg-light: #FDFCFA;
   --bg-dark: #1A1A1A;
   --text-dark: #1A1A1A;
   --text-light: #F8F7F5;
   --text-muted: #6B6B6B;
-  --border-light: #8b8986;
-  --border-dark: #7b7b7b;
+  --border-light: #868686;
+  --border-dark: #A0A0A0;
 }
 
 .navbar {
@@ -1024,14 +1024,14 @@ textarea::placeholder {
   --nav-text-hover: #B86B7A;
   --primary: #1A1A1A;
   --secondary: #8A8A8A;
-  --accent: #C8B8A2;
+  --accent: #C0C0C0;
   --bg-light: #FDFCFA;
   --bg-dark: #1A1A1A;
   --text-dark: #1A1A1A;
   --text-light: #F8F7F5;
   --text-muted: #6B6B6B;
-  --border-light: #8b8986;
-  --border-dark: #7b7b7b;
+  --border-light: #868686;
+  --border-dark: #A0A0A0;
 }
 
 .navbar {
@@ -2106,14 +2106,14 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 .site-footer {
   --primary: #1A1A1A;
   --secondary: #8A8A8A;
-  --accent: #C8B8A2;
+  --accent: #C0C0C0;
   --bg-light: #FDFCFA;
   --bg-dark: #1A1A1A;
   --text-dark: #1A1A1A;
   --text-light: #F8F7F5;
   --text-muted: #6B6B6B;
-  --border-light: #8b8986;
-  --border-dark: #7b7b7b;
+  --border-light: #868686;
+  --border-dark: #A0A0A0;
 
   font-family: 'Rubik', sans-serif;
   direction: rtl;
@@ -8354,7 +8354,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .collaborations-cta-section .cta-btn--primary:hover {
-  background: #C8B8A2;
+  background: #C0C0C0;
   box-shadow: 0 16px 40px rgba(198,161,91,0.3);
   transform: translateY(-2px);
 }
@@ -9789,7 +9789,7 @@ body.accessibility-widget-visible ._access-menu {
   display: block;
   height: 1px;
   width: 40px;
-  background: linear-gradient(90deg, #C8B8A2, rgba(198,161,91,0.2));
+  background: linear-gradient(90deg, #C0C0C0, rgba(198,161,91,0.2));
   flex-shrink: 0;
 }
 
@@ -9799,7 +9799,7 @@ body.accessibility-widget-visible ._access-menu {
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #C8B8A2;
+  color: #C0C0C0;
   white-space: nowrap;
 }
 
@@ -9825,11 +9825,11 @@ body.accessibility-widget-visible ._access-menu {
 
 .index-hero-section .index-hero-h1-line2 {
   display: block;
-  background: linear-gradient(90deg, #3B3B3B 0%, #C8B8A2 45%, #2A2A2A 100%);
+  background: linear-gradient(90deg, #3B3B3B 0%, #C0C0C0 45%, #2A2A2A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: #C8B8A2;
+  color: #C0C0C0;
 }
 
 /* H3 subtitle */
@@ -9862,7 +9862,7 @@ body.accessibility-widget-visible ._access-menu {
   font-size: 15px;
   font-weight: 600;
   color: #1F2328;
-  background: linear-gradient(135deg, #2A2A2A 0%, #C8B8A2 50%, #101010 100%);
+  background: linear-gradient(135deg, #2A2A2A 0%, #C0C0C0 50%, #101010 100%);
   padding: 14px 32px;
   border-radius: 3px;
   text-decoration: none;
@@ -9875,7 +9875,7 @@ body.accessibility-widget-visible ._access-menu {
 .index-hero-section .index-hero-btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 38px rgba(198,161,91,0.50), 0 4px 12px rgba(0,0,0,0.22);
-  background: linear-gradient(135deg, #3B3B3B 0%, #D3C6B4 50%, #2A2A2A 100%);
+  background: linear-gradient(135deg, #3B3B3B 0%, #CFCFCF 50%, #2A2A2A 100%);
   color: #1F2328;
 }
 
