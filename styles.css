@@ -10232,67 +10232,61 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 /* /Zappy custom logo size */
 
 
-/* ══ HERO — שחור עמוק עם הדגשות כסוף ══ */
-.index-hero-section {
-  background-color: #050505;
+/* H1 on dark/hero background → light color */
+.index-hero-section h1,
+.index-hero-section .index-hero-h1,
+section[class*="-hero-"] h1,
+section[class*="-hero-"] .index-hero-h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--background-color);
 }
 
-.index-hero-section .index-hero-eyebrow-line {
-  background: linear-gradient(90deg, var(--secondary-color), rgba(183,187,199,0.15));
+/* ── CTA / Button Text ── */
+.index-hero-section .index-hero-btn-primary,
+.index-hero-section .index-hero-btn-secondary,
+[class*="-btn-primary"],
+[class*="-btn-secondary"],
+[class*="cta-btn"],
+[class*="nav-cta"],
+button:not(.mobile-toggle):not(.phone-header-btn),
+.btn,
+.button,
+a[class*="btn"],
+a[class*="button"] {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(14px, 1.2vw, 16px);
+  letter-spacing: 0.05em;
 }
 
+/* ── Hero eyebrow label ── */
 .index-hero-section .index-hero-eyebrow-text {
-  color: var(--secondary-color);
-  letter-spacing: 0.26em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.25em;
 }
 
-.index-hero-section .index-hero-h1-line1 {
-  color: var(--background-color);
+/* ── Hero H1 lines override ── */
+.index-hero-section .index-hero-h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
 
+.index-hero-section .index-hero-h1-line1,
 .index-hero-section .index-hero-h1-line2 {
-  background: linear-gradient(90deg, var(--background-color) 0%, var(--secondary-color) 50%, #D8DAE2 100%);
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
 
+/* ── Hero Subtitle H3 ── */
 .index-hero-section .index-hero-h3 {
-  color: rgba(247,245,242,0.78);
-}
-
-/* ══ HERO CTA — ראשי שחור, משני כסוף ══ */
-.index-hero-section .index-hero-btn-primary {
-  background: var(--background-color);
-  background-image: none;
-  color: var(--text-color);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.28);
-  border: none;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.index-hero-section .index-hero-btn-primary:hover {
-  background: var(--surface-color);
-  background-image: none;
-  color: var(--text-color);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
-}
-
-.index-hero-section .index-hero-btn-secondary {
-  border: 1px solid rgba(183,187,199,0.55);
-  color: var(--background-color);
-  background-color: transparent;
-}
-
-.index-hero-section .index-hero-btn-secondary:hover {
-  border-color: var(--secondary-color);
-  background-color: rgba(183,187,199,0.12);
-  color: var(--background-color);
-}
-
-footer a:hover,
-.footer a:hover,
-[class*="footer"] a:hover {
-  color: var(--accent-color);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.7;
+  color: rgba(247, 245, 242, 0.88);
 }
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
