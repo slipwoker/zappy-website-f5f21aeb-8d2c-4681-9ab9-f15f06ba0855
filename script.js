@@ -1176,6 +1176,30 @@ window.onload = function() {
 /* END ZAPPY_FAQ_ACCORDION_TOGGLE */
 
 
+/* ZAPPY_NAV_SCROLL_PADDING */
+(function(){
+  try {
+    if (window.__zappyNavScrollPaddingInit) return;
+    window.__zappyNavScrollPaddingInit = true;
+    function updateScrollPadding() {
+      var nav = document.querySelector('nav.navbar') || document.querySelector('nav') || document.querySelector('header');
+      if (!nav) return;
+      var s = window.getComputedStyle(nav);
+      if (s.position !== 'fixed' && s.position !== 'sticky') return;
+      var h = nav.offsetHeight;
+      if (h > 0) document.documentElement.style.scrollPaddingTop = h + 'px';
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateScrollPadding, { once: true });
+    } else {
+      updateScrollPadding();
+    }
+    window.addEventListener('resize', updateScrollPadding, { passive: true });
+  } catch (e) {}
+})();
+/* END ZAPPY_NAV_SCROLL_PADDING */
+
+
 /* ZAPPY_CONTACT_FORM_PREVENT_DEFAULT */
 (function(){
   try {
@@ -1366,6 +1390,10 @@ window.onload = function() {
             if (!ch || !ch.tagName) continue;
             var tag = ch.tagName.toLowerCase();
             if (tag === 'script' || tag === 'style') continue;
+            if (ch.getAttribute('aria-hidden') === 'true') continue;
+            if (ch.getAttribute('data-zappy-internal') === 'true') continue;
+            var pos = window.getComputedStyle(ch).position;
+            if (pos === 'absolute' || pos === 'fixed') continue;
             items.push(ch);
           }
           var totalItems = items.length;
@@ -1373,6 +1401,8 @@ window.onload = function() {
 
           var cs = window.getComputedStyle(container);
           if (cs.display !== 'grid') continue;
+          var gta = (cs.gridTemplateAreas || '').trim();
+          if (gta && gta !== 'none') continue;
           var gtc = (cs.gridTemplateColumns || '').trim();
           if (!gtc || gtc === 'none') continue;
           var colWidths = gtc.split(' ').filter(function(v) { return v && parseFloat(v) > 0; });

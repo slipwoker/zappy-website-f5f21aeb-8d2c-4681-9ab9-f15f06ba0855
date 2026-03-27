@@ -10252,6 +10252,42 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 /* === BUTTON TEXT OVERRIDES END === */
 
 
+/* Privacy consent checkbox — uses !important to override site form styles */
+.privacy-consent {
+  margin: 16px 0 !important;
+  font-size: 0.875rem !important;
+}
+.privacy-consent-label {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  line-height: 1.4 !important;
+  flex-direction: row !important;
+  color: inherit !important;
+}
+.privacy-consent-checkbox {
+  margin-top: 3px !important;
+  flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  cursor: pointer !important;
+  accent-color: currentColor;
+}
+.privacy-consent span {
+  flex: 1;
+  color: inherit !important;
+}
+.privacy-consent a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  font-weight: 600;
+}
+.privacy-consent a:hover {
+  opacity: 0.75;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
@@ -10426,7 +10462,7 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 /* Ensures grids with explicit columns use CSS variable and are responsive on mobile */
 
 /* DESKTOP: Explicit column grids use CSS variable for grid-template-columns */
-/* This rule reads the --zappy-grid-cols CSS variable set in inline styles */
+/* The deployment process ensures --zappy-grid-cols is always set in inline styles */
 [data-zappy-explicit-columns="true"] {
   display: grid !important;
   grid-template-columns: var(--zappy-grid-cols, repeat(2, minmax(0, 1fr))) !important;
