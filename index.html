@@ -219,13 +219,16 @@
 </script>
 <!-- End Zappy Analytics -->
     <meta property="og:title" content="שיער כסוף הוא הסטייל החדש שלך — House of Silver">
-  <meta property="og:description" content="House of Silver היא הפלטפורמה הפרמיום לנשים עם שיער כסוף. קהילת Silver Sisters, מגזין יוקרתי, כלי העצמה וייעוץ מקצועי — כי כסוף זה לא גיל, זה אופנה.">
-  <meta property="og:type" content="website">
+    <meta property="og:description" content="House of Silver היא הפלטפורמה הפרמיום לנשים עם שיער כסוף. קהילת Silver Sisters, מגזין יוקרתי, כלי העצמה וייעוץ מקצועי — כי כסוף זה לא גיל, זה אופנה.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="שיער כסוף הוא הסטייל החדש שלך — House of Silver">
+    <meta name="twitter:description" content="House of Silver היא הפלטפורמה הפרמיום לנשים עם שיער כסוף. קהילת Silver Sisters, מגזין יוקרתי, כלי העצמה וייעוץ מקצועי — כי כסוף זה לא גיל, זה אופנה.">
+    <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="שיער כסוף הוא הסטייל החדש שלך — House of Silver">
-  <meta name="twitter:description" content="House of Silver היא הפלטפורמה הפרמיום לנשים עם שיער כסוף. קהילת Silver Sisters, מגזין יוקרתי, כלי העצמה וייעוץ מקצועי — כי כסוף זה לא גיל, זה אופנה.">
+  
+  
+  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -555,11 +558,14 @@
       /* Submenu item styling */
       .sub-menu li { list-style: none; margin: 0; padding: 0; }
       .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       /* Desktop: show submenu on Menu Group hover */
       li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Menu Group title styling */
@@ -568,7 +574,7 @@
       /* ========== MOBILE SUBMENU STYLES ========== */
       @media (max-width: 768px) {
         .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
         [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
         /* Disable hover behavior on mobile */
         .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -581,7 +587,11 @@
         .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
         .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
         .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
         .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
       }
       @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
@@ -647,8 +657,14 @@
     
 
     <div class="nav-cta-container">
+      <div class="nav-social-icons">
+        <a href="https://facebook.com/houseofsilver" aria-label="Facebook" class="nav-social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/houseofsilver" aria-label="Instagram" class="nav-social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@houseofsilver" aria-label="TikTok" class="nav-social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@houseofsilver" aria-label="YouTube" class="nav-social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      </div>
       <a href="צרי קשר" class="nav-cta-btn" data-element-type="button" data-element-id="btn-1774276400878-faofkioy8" data-native-element="true" style="color: rgb(255, 255, 255) !important; border-color: var(--primary-color, var(--primary, #8B0000)) !important; background-color: var(--primary-color, var(--primary, #8B0000)) !important; background-image: none !important;" data-text-color="#FFFFFF">הצטרפי לקהילת הפייסבוק</a>
-    </div>
+</div>
   </div>
 </nav>
 <script>
@@ -1160,7 +1176,7 @@
       <!-- Portrait Column (END = LEFT in RTL) -->
       <div class="index-profile-portrait-wrap">
         <div class="index-profile-portrait-inner">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774300582891-1u8tkxozm" data-element-type="image" data-zappy-zoom-wrapper-width="420px" data-zappy-zoom-wrapper-height="694px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 420px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 694px !important; display: block !important;"><img data-placeholder="index-profile-image-1" data-context="Elegant editorial portrait of Mital Peretz Golan, an Israeli beauty and wellness expert in her 40s with striking silver hair. She has a warm, confident smile and sophisticated posture. Clean, bright studio background with soft natural light. Minimal styling, luxury editorial feel. Silver hair styled beautifully, wearing elegant neutral-toned clothing. The image should feel intimate, polished, and aspirational — like a high-end beauty magazine cover." width="520" height="680" src="/assets/business-general-service-upload-1774302088930.webp" alt="מיטל פרץ גולן – מומחית לביוטי ושיער כסוף, מנהלת קהילת Silver Sisters" data-element-type="image" data-element-id="img-1774300582891-1u8tkxozm" class="zappy-editable-image" data-original-position="static" style="position: absolute !important; object-position: 50% 50%; margin: 0px !important; left: -12.9221% !important; top: -1% !important; width: 125.844% !important; height: 102% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" data-zappy-zoom="1.02" data-zappy-original-width="419.9999694824219" data-zappy-original-height="693.9937133789062"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774300582891-1u8tkxozm" data-element-type="image" data-zappy-zoom-wrapper-width="420px" data-zappy-zoom-wrapper-height="694px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 420px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 694px !important; display: block !important;"><img data-placeholder="index-profile-image-1" data-context="Elegant editorial portrait of Mital Peretz Golan, an Israeli beauty and wellness expert in her 40s with striking silver hair. She has a warm, confident smile and sophisticated posture. Clean, bright studio background with soft natural light. Minimal styling, luxury editorial feel. Silver hair styled beautifully, wearing elegant neutral-toned clothing. The image should feel intimate, polished, and aspirational — like a high-end beauty magazine cover." width="520" height="680" src="/assets/business-general-service-upload-1774302088930.webp" alt="מיטל פרץ גולן – מומחית לביוטי ושיער כסוף, מנהלת קהילת Silver Sisters" data-element-type="image" data-element-id="img-1774300582891-1u8tkxozm" class="zappy-editable-image" style="position: absolute !important; object-position: 50% 50%; margin: 0px !important; left: -12.9221% !important; top: -1% !important; width: 125.844% !important; height: 102% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" data-zappy-zoom="1.02" data-zappy-original-width="419.9999694824219" data-zappy-original-height="693.9937133789062"></div>
           <div class="index-profile-portrait-badge">
             <span class="index-profile-badge-text" style="outline: none; max-width: 45ch; margin-left: auto; margin-right: auto;" data-zappy-text-width="narrow">מייסדת</span>
             <span class="index-profile-badge-name">House of Silver <br>וסילבר סיסטרס ישראל</span>
@@ -1179,12 +1195,12 @@
       <p class="index-profile-icons-subtitle">השיער הכסוף הוא בחירה אופנתית עולמית. הכירו כמה מהנשים שהפכו אותו לסמל של חופש, אלגנטיות ונוכחות.</p>
     </div>
 
-    <div class="index-profile-icons-grid zappy-preserve-css-grid" id="zappy-auto-grid-1774300582902-yir08i" data-zappy-auto-grid="true" data-original-item-width="355" data-original-gap="28px" style="--zappy-grid-cols: 354.667px 354.667px 354.667px; grid-template-columns: 354.667px 354.667px 354.667px;">
+    <div class="index-profile-icons-grid zappy-preserve-css-grid" id="zappy-auto-grid-1774300582902-yir08i" data-zappy-auto-grid="true" data-original-item-width="355" data-original-gap="28px" style="--zappy-grid-cols: 354.667px 354.667px 354.667px; grid-template-columns: 354.667px 354.667px 354.667px;" data-zappy-explicit-columns="true">
 
       <!-- Icon Card 1 -->
       <article class="index-profile-icon-card">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-2" data-context="Monochrome or desaturated editorial portrait of a confident woman in her 50s with naturally silver hair, styled in a chic updo. She has strong facial features, minimal makeup, and wears elegant dark clothing. The image feels like a high-fashion magazine editorial — sophisticated, empowering, and timeless. Black and white or very low saturation treatment." width="320" height="380" src="/assets/site-index-profile-image-2.webp" alt="אישה עם שיער כסוף – סמל לחופש ואלגנטיות" data-element-type="image" data-element-id="img-1774300582891-lhe94i18t" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-profile-image-2" data-context="Monochrome or desaturated editorial portrait of a confident woman in her 50s with naturally silver hair, styled in a chic updo. She has strong facial features, minimal makeup, and wears elegant dark clothing. The image feels like a high-fashion magazine editorial — sophisticated, empowering, and timeless. Black and white or very low saturation treatment." width="320" height="380" src="/assets/site-index-profile-image-2.webp" alt="אישה עם שיער כסוף – סמל לחופש ואלגנטיות" data-element-type="image" data-element-id="img-1774300582891-lhe94i18t" class="zappy-editable-image" >
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1196,7 +1212,7 @@
       <!-- Icon Card 2 -->
       <article class="index-profile-icon-card">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-3" data-context="Desaturated or soft monochrome portrait of a graceful woman in her late 40s with flowing silver-white hair worn loose and natural. She looks directly at the camera with a calm, empowered expression. Minimal background, editorial lighting. Styled like a luxury wellness brand campaign — serene, refined, and quietly powerful." width="320" height="380" src="/assets/site-index-profile-image-3.webp" alt="אישה עם שיער כסוף טבעי – אלגנטיות ונוכחות" data-element-type="image" data-element-id="img-1774300582891-9nlvulb2x" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-profile-image-3" data-context="Desaturated or soft monochrome portrait of a graceful woman in her late 40s with flowing silver-white hair worn loose and natural. She looks directly at the camera with a calm, empowered expression. Minimal background, editorial lighting. Styled like a luxury wellness brand campaign — serene, refined, and quietly powerful." width="320" height="380" src="/assets/site-index-profile-image-3.webp" alt="אישה עם שיער כסוף טבעי – אלגנטיות ונוכחות" data-element-type="image" data-element-id="img-1774300582891-9nlvulb2x" class="zappy-editable-image" >
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1208,7 +1224,7 @@
       <!-- Icon Card 3 -->
       <article class="index-profile-icon-card">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-4" data-context="Low-saturation editorial portrait of a vibrant woman in her early 50s with a bold silver pixie cut or short silver hair. She has a radiant smile and strong personal style — wearing a statement accessory or colorful scarf against a neutral background. The image should feel confident, modern, and fashion-forward, like a global style icon. Slightly desaturated editorial treatment." width="320" height="380" src="/assets/site-index-profile-image-4.webp" alt="אישה עם שיער כסוף קצר – סגנון ונוכחות עולמית" data-element-type="image" data-element-id="img-1774300582891-5swhvmvwy" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-profile-image-4" data-context="Low-saturation editorial portrait of a vibrant woman in her early 50s with a bold silver pixie cut or short silver hair. She has a radiant smile and strong personal style — wearing a statement accessory or colorful scarf against a neutral background. The image should feel confident, modern, and fashion-forward, like a global style icon. Slightly desaturated editorial treatment." width="320" height="380" src="/assets/site-index-profile-image-4.webp" alt="אישה עם שיער כסוף קצר – סגנון ונוכחות עולמית" data-element-type="image" data-element-id="img-1774300582891-5swhvmvwy" class="zappy-editable-image" >
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1243,9 +1259,9 @@
     </div>
 
     <!-- Three-Card Grid -->
-    <div class="index-pathways-grid zappy-preserve-css-grid" style="--zappy-grid-cols: 357.328px 357.328px 357.344px; display: grid; grid-template-columns: 357.328px 357.328px 357.344px;" id="zappy-auto-grid-1774281198834-3h8wfr" data-zappy-auto-grid="true" data-original-item-width="357" data-original-gap="24px"><article class="index-pathways-card">
+    <div class="index-pathways-grid zappy-preserve-css-grid" style="--zappy-grid-cols: 357.328px 357.328px 357.344px; display: grid; grid-template-columns: 357.328px 357.328px 357.344px;" id="zappy-auto-grid-1774281198834-3h8wfr" data-zappy-auto-grid="true" data-original-item-width="357" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-1" data-context="Elegant close-up of a woman with partially silver and partially dark hair, gazing thoughtfully in soft natural light, beauty and wellness editorial style, warm ivory tones, sophisticated and aspirational mood" width="600" height="280" src="/assets/site-index-pathways-image-1.webp" alt="אישה מתלבטת במעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-ldmo0zss5" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-1" data-context="Elegant close-up of a woman with partially silver and partially dark hair, gazing thoughtfully in soft natural light, beauty and wellness editorial style, warm ivory tones, sophisticated and aspirational mood" width="600" height="280" src="/assets/site-index-pathways-image-1.webp" alt="אישה מתלבטת במעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-ldmo0zss5" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
           <p class=""><span class="index-pathways-card-tag">התחלה</span>
@@ -1255,7 +1271,7 @@
         </p></div>
       </article><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-2" data-context="Professional hair salon scene showing a silver-haired woman during a hair treatment process, precise and clinical yet elegant, soft studio lighting, beauty wellness editorial photography" width="600" height="280" src="/assets/site-index-pathways-image-2.webp" alt="אישה בתהליך מעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-w37p0kznf" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-2" data-context="Professional hair salon scene showing a silver-haired woman during a hair treatment process, precise and clinical yet elegant, soft studio lighting, beauty wellness editorial photography" width="600" height="280" src="/assets/site-index-pathways-image-2.webp" alt="אישה בתהליך מעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-w37p0kznf" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
           <p class=""><span class="index-pathways-card-tag">אמצע הדרך</span>
@@ -1265,7 +1281,7 @@
         </p></div>
       </article><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-3" data-context="Glamorous silver-haired woman with radiant, luminous fully silver hair styled elegantly, premium beauty editorial, soft metallic tones, confident and sophisticated, luxury wellness photography" width="600" height="280" src="/assets/site-index-pathways-image-3.webp" alt="אישה עם שיער כסוף מלא ומזהיר" data-element-type="image" data-element-id="img-1774281198824-4hxdvdv0j" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-3" data-context="Glamorous silver-haired woman with radiant, luminous fully silver hair styled elegantly, premium beauty editorial, soft metallic tones, confident and sophisticated, luxury wellness photography" width="600" height="280" src="/assets/site-index-pathways-image-3.webp" alt="אישה עם שיער כסוף מלא ומזהיר" data-element-type="image" data-element-id="img-1774281198824-4hxdvdv0j" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
           <p class=""><span class="index-pathways-card-tag">סילבר על מלא</span>
@@ -1309,9 +1325,9 @@
     </header>
 
     <!-- Category Cards Row -->
-    <div class="showcase-categories zappy-preserve-css-grid" style="--zappy-grid-cols: 362.667px 362.667px 362.667px; display: grid; grid-template-columns: 362.667px 362.667px 362.667px;" id="zappy-auto-grid-1774284147345-2volna" data-zappy-auto-grid="true" data-original-item-width="363" data-original-gap="24px"><article class="category-card">
+    <div class="showcase-categories zappy-preserve-css-grid" style="--zappy-grid-cols: 362.667px 362.667px 362.667px; display: grid; grid-template-columns: 362.667px 362.667px 362.667px;" id="zappy-auto-grid-1774284147345-2volna" data-zappy-auto-grid="true" data-original-item-width="363" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-1" data-context="Close-up editorial beauty photo of silver hair care products — glass bottles, serums, and professional hair treatment tools arranged elegantly on a marble surface, with a strand of luminous silver hair as a focal element. Soft studio lighting, luxury beauty aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-1.webp" alt="Hair Lab – מעבדת שיער כסוף מקצועית" class="category-card-img zappy-editable-image" data-element-type="image" data-element-id="img-1774284147334-bajkvprw2" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-1" data-context="Close-up editorial beauty photo of silver hair care products — glass bottles, serums, and professional hair treatment tools arranged elegantly on a marble surface, with a strand of luminous silver hair as a focal element. Soft studio lighting, luxury beauty aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-1.webp" alt="Hair Lab – מעבדת שיער כסוף מקצועית" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-bajkvprw2" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
@@ -1322,7 +1338,7 @@
         </p></div>
       </article><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-2" data-context="Elegant silver-haired woman in her 50s wearing sophisticated fashion — a refined outfit in neutral or jewel tones, with subtle makeup and confident posture. Editorial style, bright natural light, fashion-forward beauty magazine aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-2.webp" alt="Style and Glow – סטייל, איפור ו-wellness" class="category-card-img zappy-editable-image" data-element-type="image" data-element-id="img-1774284147334-06gk3chlr" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-2" data-context="Elegant silver-haired woman in her 50s wearing sophisticated fashion — a refined outfit in neutral or jewel tones, with subtle makeup and confident posture. Editorial style, bright natural light, fashion-forward beauty magazine aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-2.webp" alt="Style and Glow – סטייל, איפור ו-wellness" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-06gk3chlr" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
@@ -1333,7 +1349,7 @@
         </div>
       </article><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-3" data-context="Portrait of a confident, radiant woman with beautiful natural silver hair smiling warmly at the camera. Community and empowerment feel, soft editorial lighting, emotional and authentic, lifestyle photography for a premium beauty wellness brand." width="400" height="260" src="/assets/site-index-showcase-image-3.webp" alt="Silver Stories – סיפורי טרנספורמציה של קהילת Silver Sisters" class="category-card-img zappy-editable-image" data-element-type="image" data-element-id="img-1774284147334-x4cg8m5hc" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-3" data-context="Portrait of a confident, radiant woman with beautiful natural silver hair smiling warmly at the camera. Community and empowerment feel, soft editorial lighting, emotional and authentic, lifestyle photography for a premium beauty wellness brand." width="400" height="260" src="/assets/site-index-showcase-image-3.webp" alt="Silver Stories – סיפורי טרנספורמציה של קהילת Silver Sisters" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-x4cg8m5hc" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
@@ -1416,7 +1432,7 @@
 
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-brand">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo zappy-editable-image" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" data-original-position="static" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
           <p class="footer-tagline" >יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
           <div class="footer-accent-line"></div>
         </div>
@@ -1602,29 +1618,143 @@
 
     <script>
     (function(){
-      if(window.innerWidth>768)return;
-      function fixZW(){
+      var _applied=false;
+      function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
+      function fixDesktopWrappers(){
+        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
+        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
+        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
+        // the correct stored dimensions.
+      }
+      function _parsePos(s){var x=50,y=50;try{var m=(s||'').match(/(-?d+(?:.d+)?)%s+(-?d+(?:.d+)?)%/);if(m){x=parseFloat(m[1]);y=parseFloat(m[2]);}}catch(e){}if(!isFinite(x))x=50;if(!isFinite(y))y=50;return{x:Math.max(0,Math.min(100,x)),y:Math.max(0,Math.min(100,y))};}
+      function _coverPct(iA,cA){if(!isFinite(iA)||iA<=0||!isFinite(cA)||cA<=0)return{w:100,h:100};if(iA>=cA)return{w:(iA/cA)*100,h:100};return{w:100,h:(cA/iA)*100};}
+      function applyMobile(){
+        if(_applied)return;_applied=true;
         document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
           var cw=w.style.getPropertyValue('width');
           if(!cw||cw==='100%')return;
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
-          w.style.setProperty('height','auto','important');
+          if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
           var img=w.querySelector('img');
-          if(img){
+          if(!img)return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileZoomStr=img.getAttribute('data-zappy-mobile-zoom');
+          var mobileZoom=parseFloat(mobileZoomStr);
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var hasMobileOverrides=mobilePos||mobileZoomStr;
+          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
+          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
+          if(inConstrainedParent){
+            w.style.setProperty('max-width','100%','important');
+          }else{
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+          }
+          if(mobileSrc)img.src=mobileSrc;
+          if(hasMobileOverrides){
+            var effZoom=(isFinite(mobileZoom)&&mobileZoom>0)?mobileZoom:(parseFloat(img.getAttribute('data-zappy-zoom'))||1);
+            var effPos=mobilePos||'50% 50%';
+            w.style.setProperty('overflow','hidden','important');
+            w.style.setProperty('position','relative','important');
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+            var _sW=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-width'))||0;
+            var _sH=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-height'))||0;
+            if(_sW>0&&_sH>0){w.style.setProperty('aspect-ratio',_sW+'/'+_sH,'important');w.style.setProperty('height','auto','important');}
+            function _applyZoomCrop(_img,_w,_ePos,_eZoom){
+              var rect=_w.getBoundingClientRect();
+              if(!rect||!rect.width||!rect.height)return;
+              var nW=_img.naturalWidth||0,nH=_img.naturalHeight||0;
+              if(!(nW>0&&nH>0))return;
+              var iA=nW/nH,cA=rect.width/rect.height;
+              var cv=_coverPct(iA,cA);
+              var wP=100,hP=100;
+              if(_eZoom>=1){wP=cv.w*_eZoom;hP=cv.h*_eZoom;}
+              else{var t2=(_eZoom-0.5)/0.5;if(!isFinite(t2))t2=0;t2=Math.max(0,Math.min(1,t2));wP=100+t2*(cv.w-100);hP=100+t2*(cv.h-100);}
+              var p2=_parsePos(_ePos);
+              var lP=(100-wP)*(p2.x/100);
+              var tP=(100-hP)*(p2.y/100);
+              _img.style.setProperty('position','absolute','important');
+              _img.style.setProperty('left',lP+'%','important');
+              _img.style.setProperty('top',tP+'%','important');
+              _img.style.setProperty('width',wP+'%','important');
+              _img.style.setProperty('height',hP+'%','important');
+              _img.style.setProperty('max-width','none','important');
+              _img.style.setProperty('max-height','none','important');
+              _img.style.setProperty('display','block','important');
+              _img.style.setProperty('object-fit',_eZoom<1?'fill':'cover','important');
+              _img.style.setProperty('transform','none','important');
+              _img.style.setProperty('margin','0','important');
+            }
+            _applyZoomCrop(img,w,effPos,effZoom);
+            if(mobileSrc&&!(img.complete&&img.naturalWidth>0)){
+              (function(_i,_w2,_p,_z){_i.addEventListener('load',function _ol(){_i.removeEventListener('load',_ol);try{_applyZoomCrop(_i,_w2,_p,_z);}catch(e){}});
+              })(img,w,effPos,effZoom);
+            }
+          }else{
+            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
             img.style.setProperty('width','100%','important');
             img.style.setProperty('height','auto','important');
             img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
             img.style.setProperty('object-fit','cover','important');
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');
+            img.style.setProperty('transform','none','important');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          if(mobileSrc)img.src=mobileSrc;
+          if(mobilePos)img.style.setProperty('object-position',mobilePos,'important');
+          if(mobileZoom>1){
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',mobilePos||'50% 50%','important');
+            var p=img.parentElement;
+            if(p)p.style.setProperty('overflow','hidden','important');
           }
         });
       }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
-      else setTimeout(fixZW,50);
+      function revertDesktop(){
+        if(!_applied)return;_applied=false;
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(w._zappyDesktop&&w._zappyDesktop.wStyle!=null){w.setAttribute('style',w._zappyDesktop.wStyle);}
+          var img=w.querySelector('img');
+          if(img&&img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        _fixHeroBgWrappers();
+        fixDesktopWrappers();
+      }
+      function _fixHeroBgWrappers(){var isMob=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){if(!_isHeroBg(w))return;w.style.setProperty('position','absolute','important');w.style.setProperty('top','0','important');w.style.setProperty('left','0','important');w.style.setProperty('width','100%','important');w.style.setProperty('height','100%','important');w.style.setProperty('max-width','none','important');w.style.setProperty('overflow','hidden','important');w.setAttribute('data-zappy-zoom-wrapper-width-mode','full');var img=w.querySelector('img');if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','100%','important');img.style.setProperty('object-fit','cover','important');img.style.setProperty('position','relative','important');img.style.setProperty('top','0','important');img.style.setProperty('left','0','important');img.style.setProperty('max-width','none','important');img.style.setProperty('max-height','none','important');img.style.setProperty('display','block','important');if(isMob){var mSrc=img.getAttribute('data-zappy-mobile-src');var mPos=img.getAttribute('data-zappy-mobile-object-position');var mZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));if(mSrc){if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};img.src=mSrc;}if(mPos)img.style.setProperty('object-position',mPos,'important');if(mZoom>1){img.style.setProperty('transform','scale('+mZoom+')','important');img.style.setProperty('transform-origin',mPos||'50% 50%','important');}}}});}
+      function init(){
+        _fixHeroBgWrappers();
+        var mq=window.matchMedia('(max-width:768px)');
+        function onChange(e){if(e.matches)applyMobile();else revertDesktop();}
+        if(mq.matches)applyMobile();
+        else fixDesktopWrappers();
+        try{mq.addEventListener('change',onChange);}catch(e){mq.addListener(onChange);}
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+      else setTimeout(init,50);
     })();
     </script>
 </body>
