@@ -10287,6 +10287,15 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 .privacy-consent a:hover {
   opacity: 0.75;
 }
+
+.nav-cta-container {
+  gap: 14px !important;
+}
+
+.nav-follow-label {
+  margin-left: 6px;
+  margin-right: 6px;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
