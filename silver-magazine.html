@@ -290,23 +290,23 @@
   <nav class="navbar" dir="rtl" style="background-color: transparent !important; box-shadow: none;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1774276400878-env9d1yck" data-native-element="true">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="width: 24px !important; height: 24px !important; display: block !important;">
-      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none !important; width: 24px !important; height: 24px !important;">
-      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
-  <button class="phone-header-btn" data-phone="" aria-label="Call" data-element-type="button" data-element-id="btn-1774276400878-nmvqkfkrh" data-native-element="true">
+  <button class="phone-header-btn" data-phone aria-label="Call" data-element-type="button" data-element-id="btn-1774276400878-nmvqkfkrh" data-native-element="true">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </button>
 
   <div class="nav-container">
     <div class="nav-right-group"><div class="nav-brand">
       <a href="/" class="logo-link">HOUSE OF SILVER</a>
-    </div><ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">נעים להכיר</a></li><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a><ul class="sub-menu"><li><a href="/silver-magazine/transition-cut-for-silver-hair" class="nav-link">תספורת מעבר</a></li></ul></li><li><a href="/community-and-media">קהילה ומדיה</a></li></ul></div>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a><ul class="sub-menu"><li><a href="/silver-magazine/transition-cut-for-silver-hair">תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</a></li></ul></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/copy">קהילה ומדיה (copy)</a></li><li><a href="/contact">צור קשר</a></li></ul></div>
 
     
 
@@ -357,12 +357,12 @@
     // Check if background is transparent or rgba with 0 alpha
     const isTransparent = bgColor === 'transparent' || 
                          bgColor === 'rgba(0, 0, 0, 0)' ||
-                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+                         (bgColor.startsWith('rgba') &amp;&amp; bgColor.includes(', 0)'));
     
     if (isTransparent) {
       // Check for background-image or gradient
       const bgImage = computedStyle.backgroundImage;
-      if (bgImage && bgImage !== 'none') {
+      if (bgImage &amp;&amp; bgImage !== 'none') {
         console.log('[Navbar] Navbar has background image/gradient, using dark text');
         bgColor = 'rgb(240, 240, 240)'; // Assume light background
       } else {
@@ -375,7 +375,7 @@
     
     // Calculate luminance to determine if background is light or dark
     const rgb = bgColor.match(/\d+/g);
-    if (rgb && rgb.length >= 3) {
+    if (rgb &amp;&amp; rgb.length &gt;= 3) {
       const r = parseInt(rgb[0]);
       const g = parseInt(rgb[1]);
       const b = parseInt(rgb[2]);
@@ -511,7 +511,7 @@
       // ONLY apply inline positioning styles on mobile viewport
       // On desktop, the CSS handles hiding these buttons with display: none
       // Inline styles were breaking desktop layout by overriding CSS
-      const isMobileViewport = window.innerWidth <= 768;
+      const isMobileViewport = window.innerWidth &lt;= 768;
       
       if (mobileToggle) {
         // Icon sizing applies to all viewports for consistency
@@ -702,7 +702,7 @@
       phoneBtn.addEventListener('click', function() {
         // Get phone number from placeholder in page or use default
         const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-        const phoneNumber = phoneLinks.length > 0 
+        const phoneNumber = phoneLinks.length &gt; 0 
           ? phoneLinks[0].getAttribute('href').replace('tel:', '')
           : '[business_phone]';
         
@@ -719,7 +719,7 @@
     const handleWhatsAppVisibility = function() {
       const whatsappBtn = document.querySelector('.whatsapp-float');
       if (whatsappBtn) {
-        const isDesktop = window.innerWidth >= 769;
+        const isDesktop = window.innerWidth &gt;= 769;
         if (isDesktop) {
           whatsappBtn.style.setProperty('display', 'none', 'important');
           whatsappBtn.style.setProperty('visibility', 'hidden', 'important');
@@ -759,14 +759,14 @@
         <span class="mhli-issue-text">המגזין הדיגיטלי של House of Silver</span>
         <span class="mhli-issue-line"></span>
       </div>
-      <h1 class="mhli-headline">מגזין &amp; מעבדת שיער</h1>
+      <h1 class="mhli-headline">מגזין &amp;amp; מעבדת שיער</h1>
       <p class="mhli-subheadline">כי שיער כסוף הוא לא סוף פרק — הוא תחילת הזוהר האמיתי שלך.</p>
       <p class="mhli-manifesto">ב-House of Silver אנחנו מאמינות שכל אישה עם שיער כסוף ראויה לידע מקצועי אמיתי, לסיפורים שמחזקים, ולקהילה שמבינה. המגזין שלנו הוא הקול המערכתי של Silver Sisters — כאן תמצאי מדריכי טיפוח מעמיקים, תובנות wellness, המלצות מוצרים שנבחרו בקפידה, וסיפורי נשים שבחרו לזהור בגאון. זה לא רק תוכן — זו תנועה.</p>
       <div class="mhli-cta-row">
         <a href="#contact" class="btn-primary mhli-cta-primary">לייעוץ אישי</a>
         <a href="#magazine" class="btn-ghost mhli-cta-ghost">
           <span>לכל המאמרים</span>
-          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
         </a>
       </div>
     </div>
@@ -780,7 +780,7 @@
         <div class="mhli-band-caption">
           <span class="mhli-caption-tag">Hair Lab</span>
           <span class="mhli-caption-sep">·</span>
-          <span class="mhli-caption-tag">Style &amp; Glow</span>
+          <span class="mhli-caption-tag">Style &amp;amp; Glow</span>
           <span class="mhli-caption-sep">·</span>
           <span class="mhli-caption-tag">Silver Stories</span>
         </div>
@@ -797,7 +797,7 @@
     <header class="showcase-header">
       <div class="showcase-header-inner">
         <span class="showcase-eyebrow">המגזין הכסוף</span>
-        <h2 class="showcase-title">תוכן מקצועי. סיפורים אמיתיים.<br><br></h2>
+        <h2 class="showcase-title">תוכן מקצועי. סיפורים אמיתיים.<br><br><br><br></h2>
         <div class="showcase-rule"></div>
       </div>
     </header>
@@ -823,7 +823,7 @@
         <figure class="mhlc-card-figure">
           <img data-context="Elegant editorial fashion photograph of a stylish woman in her 40s or 50s with beautiful silver hair, wearing a chic outfit in soft neutral tones. She is applying a luxury skincare product or adjusting her accessory. The scene evokes a polished lifestyle magazine — warm natural light, minimal interior, gold accents. Aspirational and empowering." width="600" height="400" src="/assets/business-general-section-blog-grid-card-magazine-hair-lab-categories-image-2.webp" alt="סטייל וזוהר – אופנה, עור ובריאות לנשים עם שיער כסוף">
           <div class="mhlc-card-figure-overlay"></div>
-          <span class="mhlc-category-label">Style &amp; Glow</span>
+          <span class="mhlc-category-label">Style &amp;amp; Glow</span>
         </figure>
         <div class="mhlc-card-body">
           <h3 class="mhlc-card-title">סטייל וזוהר</h3>
@@ -878,7 +878,7 @@
           <p class="editorial-feature-summary">שיער כסוף ולבן דורש פרוטוקול ניקוי שונה לחלוטין מהשיער הצבוע. מיטל פרץ גולן מסבירה אילו מרכיבים להימנע מהם, כיצד לשמור על ברק ולמנוע את ההצהבה שמציקה לכל כך הרבה נשים.</p>
           <a href="#" class="editorial-read-more btn-ghost">
             <span>להמשך הקריאה</span>
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
           </a>
         </div>
       </article>
@@ -896,7 +896,7 @@
             <p class="editorial-medium-summary">מה גורם לשיער הכסוף להצהיב, ואילו פתרונות אכן עובדים? מדריך מבוסס כימיה לטיפול נכון.</p>
             <a href="#" class="editorial-read-more btn-ghost">
               <span>להמשך הקריאה</span>
-              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
             </a>
           </div>
         </article>
@@ -906,12 +906,12 @@
             <img data-context="Stylish silver-haired woman in elegant outfit, fashion editorial photography, Israeli fashion magazine, silver accessories, confident posture, luxury lifestyle" width="480" height="280" src="/assets/business-general-section-blog-grid-card-magazine-hair-lab-editorial-image-3.webp" alt="סטייל עם שיער כסוף" class="editorial-medium-img">
           </div>
           <div class="editorial-medium-content">
-            <span class="editorial-category-label editorial-category-style">Style &amp; Glow</span>
+            <span class="editorial-category-label editorial-category-style">Style &amp;amp; Glow</span>
             <h3 class="editorial-medium-title">מה ללבוש כשהסילבר הוא האקססורי הכי חזק שלך</h3>
             <p class="editorial-medium-summary">צבעים, טקסטורות ושילובי בגדים שמגבירים את הזוהר של שיער כסוף ומשדרים עוצמה אופנתית.</p>
             <a href="#" class="editorial-read-more btn-ghost">
               <span>להמשך הקריאה</span>
-              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
             </a>
           </div>
         </article>
@@ -935,7 +935,7 @@
           <p class="editorial-small-summary">המעבר לסילבר הוא לא רק שינוי מראה — הוא שינוי זהות. מה קורה לדימוי העצמי שלנו כשאנחנו בוחרות לחשוף את הכסף?</p>
           <a href="#" class="editorial-read-more btn-ghost">
             <span>להמשך הקריאה</span>
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
           </a>
         </div>
       </article>
@@ -950,7 +950,7 @@
           <p class="editorial-small-summary">מסכות, שמפואים סגולים וסרומים שמשמרים את הזוהר הכסוף ומונעים פגיעה בסיב השיער.</p>
           <a href="#" class="editorial-read-more btn-ghost">
             <span>להמשך הקריאה</span>
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
           </a>
         </div>
       </article>
@@ -965,12 +965,12 @@
           <p class="editorial-small-summary">Silver Sisters היא לא רק קהילה — היא תנועה. נשים שבחרו לחיות את הכסף שלהן בגאווה ולהשפיע על הסביבה.</p>
           <a href="#" class="editorial-read-more btn-ghost">
             <span>להמשך הקריאה</span>
-            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
           </a>
         </div>
       </article>
 
-    <article class="editorial-small-card"><div class="editorial-small-image-wrap"><img width="400" height="260" src="/assets/house-of-silver-wellness-section-blog-article-silver-magazine-transition-cut-for-silver-hair-blog-article-image-1.webp" alt="תספורת מעבר לשיער כסוף" class="editorial-small-img"></div><div class="editorial-small-content"><span class="editorial-category-label editorial-category-hairlab">Hair Lab</span><h3 class="editorial-small-title">תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</h3><p class="editorial-small-summary">House of Silver - תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</p><a href="/silver-magazine/transition-cut-for-silver-hair" class="editorial-read-more btn-ghost"><span>להמשך הקריאה</span><svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></a></div></article></div>
+    <article class="editorial-small-card"><div class="editorial-small-image-wrap"><img width="400" height="260" src="/assets/house-of-silver-wellness-section-blog-article-silver-magazine-transition-cut-for-silver-hair-blog-article-image-1.webp" alt="תספורת מעבר לשיער כסוף" class="editorial-small-img"></div><div class="editorial-small-content"><span class="editorial-category-label editorial-category-hairlab">Hair Lab</span><h3 class="editorial-small-title">תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</h3><p class="editorial-small-summary">House of Silver - תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</p><a href="/silver-magazine/transition-cut-for-silver-hair" class="editorial-read-more btn-ghost"><span>להמשך הקריאה</span><svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></a></div></article></div>
 
     <!-- Footer CTA -->
     <div class="editorial-footer-cta">
@@ -1063,26 +1063,26 @@
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-brand">
           <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
-          <p class="footer-tagline" >יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
+          <p class="footer-tagline" style>יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
           <div class="footer-accent-line"></div>
         </div>
 
         <!-- Column 2: Quick Links -->
         <div class="footer-col">
           <h4 class="footer-heading">ניווט מהיר</h4>
-          <ul class="footer-links" ><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/contact">צור קשר</a></li></ul>
+          <ul class="footer-links" style><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/contact">צור קשר</a></li></ul>
         </div>
 
         <!-- Column 3: Contact Info -->
         <div class="footer-col">
           <h4 class="footer-heading">יצירת קשר</h4>
-          <ul class="footer-contact" ><li>
+          <ul class="footer-contact" style><li>
               <i class="fas fa-envelope footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-2epv7enkw" data-icon-type="fontawesome" style="cursor: pointer;"></i>
               <a href="/cdn-cgi/l/email-protection#83d8e1f6f0eaede6f0f0dce6eee2eaefde">[business_email]</a>
             </li><li>
               <i class="fas fa-phone footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-tm4wdty9h" data-icon-type="fontawesome" style="cursor: pointer;"></i>
               <a href="tel:[business_phone]">[business_phone]</a>
-            </li><li><a href="/" >HOUSE OF SILVER</a></li></ul>
+            </li><li><a href="/" style>HOUSE OF SILVER</a></li></ul>
         </div>
 
         <!-- Column 4: Social Media -->
@@ -1094,7 +1094,7 @@
             <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1774279661942-3a87lon5s" data-icon-type="fontawesome"></i></a>
             <a href="https://www.youtube.com/@houseofsilver" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
 </div>
-          <p class="footer-social-note" >הצטרפי ברשתות החברתיות</p>
+          <p class="footer-social-note" style>הצטרפי ברשתות החברתיות</p>
         </div>
 
       </div>
@@ -1104,7 +1104,7 @@
   <!-- Bottom Bar -->
   <div class="footer-bottom">
     <div class="footer-container footer-bottom-inner">
-      <p class="footer-copyright" >© 2026 סילבר סיסטרס ישראל. כל הזכויות שמורות.</p>
+      <p class="footer-copyright" style>© 2026 סילבר סיסטרס ישראל. כל הזכויות שמורות.</p>
       <div class="footer-legal">
         <a href="/privacy">מדיניות פרטיות</a>
         <span class="footer-divider">|</span>

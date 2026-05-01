@@ -1,0 +1,424 @@
+<!doctype html><html dir="rtl" lang="he"><head><meta charset="UTF-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="index, follow" name="robots"><title>Generated Website</title><meta content="" name="description"><meta content="" name="keywords"><link href="/assets/favicon.ico" rel="icon" type="image/x-icon"><link href="/assets/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16"><link href="/assets/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32"><link href="/assets/favicon-48x48.png" rel="icon" type="image/png" sizes="48x48"><link href="/assets/favicon-192x192.png" rel="icon" type="image/png" sizes="192x192"><link href="/assets/favicon-512x512.png" rel="icon" type="image/png" sizes="512x512"><link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"><script>!function(){"use strict";var t="efabb15c-c81b-48ef-9227-ea4ddc7e1887",e="https://api.zappy5.com/api/analytics/track",a=18e5,n=2592e6,o=!0,i=!0,r=!0;var s=function(){var e="zappy_visitor_"+t,a=null;try{if(a=localStorage.getItem(e)){var o=JSON.parse(a),i=Date.now();if(i-o.created<n)return o.lastSeen=i,localStorage.setItem(e,JSON.stringify(o)),o.id}}catch(t){console.warn("Zappy Analytics: LocalStorage not available")}var r="zv_"+Date.now()+"_"+Math.random().toString(36).substr(2,9);try{localStorage.setItem(e,JSON.stringify({id:r,created:Date.now(),lastSeen:Date.now()}))}catch(t){}return r}(),c=function(){var e="zappy_session_"+t,n=null;try{if(n=sessionStorage.getItem(e)){var o=JSON.parse(n),i=Date.now();if(i-o.timestamp<a)return o.timestamp=i,sessionStorage.setItem(e,JSON.stringify(o)),o.id}}catch(t){console.warn("Zappy Analytics: SessionStorage not available")}var r="zs_"+Date.now()+"_"+Math.random().toString(36).substr(2,9);try{sessionStorage.setItem(e,JSON.stringify({id:r,timestamp:Date.now()}))}catch(t){}return r}();function l(a,n){n=n||{};var o={website_id:t,event_type:a,page_path:window.location.pathname,referrer:document.referrer||"direct",visitor_id:s,session_id:c,metadata:n};if(navigator.sendBeacon){var i=new Blob([JSON.stringify(o)],{type:"application/json"});navigator.sendBeacon(e,i)}else fetch(e,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o),keepalive:!0}).catch(function(t){console.warn("Zappy Analytics: Failed to track event",t)})}o&&l("pageview",{title:document.title,url:window.location.href}),i&&document.addEventListener("click",function(t){var e=t.target;if("BUTTON"===e.tagName||e.closest("button")){var a="BUTTON"===e.tagName?e:e.closest("button");l("click",{element:"button",text:a.textContent.trim().substring(0,100),id:a.id||null,class:a.className||null})}else if("A"===e.tagName||e.closest("a")){var n="A"===e.tagName?e:e.closest("a");l("navigation",{element:"link",text:n.textContent.trim().substring(0,100),href:n.href,external:n.hostname!==window.location.hostname})}},!0),r&&document.addEventListener("submit",function(t){var e=t.target;l("form_submit",{form_id:e.id||null,form_name:e.name||null,form_action:e.action||null,form_method:e.method||"GET"})},!0);var d=Date.now();window.addEventListener("beforeunload",function(){l("page_unload",{time_on_page:Math.floor((Date.now()-d)/1e3),page_path:window.location.pathname})}),window.zappyAnalytics={track:l,getVisitorId:function(){return s},getSessionId:function(){return c}}}()</script><meta content="website" property="og:type"><meta content="he_IL" property="og:locale"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"><link href="/assets/favicon.ico" rel="icon" type="image/x-icon"><link href="/assets/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16"><link href="/assets/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32"><link href="/assets/favicon-48x48.png" rel="icon" type="image/png" sizes="48x48"><link href="/assets/favicon-192x192.png" rel="icon" type="image/png" sizes="192x192"><link href="/assets/favicon-512x512.png" rel="icon" type="image/png" sizes="512x512"><link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"><link href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script><script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script><style>.nav-menu li:has(.sub-menu),.navbar li:has(.sub-menu),nav li:has(.sub-menu){position:relative}.nav-menu .sub-menu,.navbar .sub-menu,nav .sub-menu{display:block;position:absolute;top:100%;left:0;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 8px 25px rgba(0,0,0,.15);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s ease;z-index:1000;list-style:none;pointer-events:none}.sub-menu li{list-style:none;margin:0;padding:0}.sub-menu a{display:block;padding:10px 16px;color:#333;font-weight:500;text-decoration:none;white-space:nowrap;transition:background-color .2s}.sub-menu a:hover{background-color:#f5f5f5}[dir=rtl] .sub-menu,html[lang=ar] .sub-menu,html[lang=he] .sub-menu{left:auto;right:0}</style><style id="zappy-cta-mobile-style">@media (min-width:769px){.nav-cta-item-mobile{display:none!important}}@media (max-width:768px){.nav-cta-item-mobile{display:list-item!important}}</style><style id="zappy-nested-menu-style">@media (min-width:769px){#navMenu,.nav-menu{align-items:center!important}}#navMenu>li>.menu-group-title,.nav-menu>li>.menu-group-title{display:inline-block!important;padding:.5rem 1rem!important;color:var(--nav-color)!important;font-weight:500!important;line-height:1.7!important;cursor:default!important;user-select:none!important;vertical-align:middle!important;text-decoration:none!important;margin:0!important;transition:color .3s ease!important}#navMenu>li>.menu-group-title:hover,.nav-menu>li>.menu-group-title:hover{color:var(--nav-hover-color)!important}li:has(.menu-group-title):hover>.sub-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important}.zappy-hidden-menu-item,li:has(.menu-group-title):hover>.sub-menu .zappy-hidden-menu-item{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important}.sub-menu:hover{opacity:1!important;visibility:visible!important;pointer-events:auto!important}.nav-menu .sub-menu,.navbar .sub-menu,nav .sub-menu{display:block!important;position:absolute!important;top:100%;left:0;right:auto;min-width:200px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15);border-radius:8px;padding:8px 0;margin-top:0;opacity:0!important;visibility:hidden!important;transform:translateY(-10px);transition:opacity .3s ease,transform .3s ease,visibility .3s;z-index:1000;list-style:none;pointer-events:none}[dir=rtl] .nav-menu .sub-menu,[dir=rtl] .navbar .sub-menu,[dir=rtl] nav .sub-menu,html[lang=ar] .nav-menu .sub-menu,html[lang=ar] .navbar .sub-menu,html[lang=ar] nav .sub-menu,html[lang=he] .nav-menu .sub-menu,html[lang=he] .navbar .sub-menu,html[lang=he] nav .sub-menu{left:auto;right:0}.nav-menu li:hover>.sub-menu,.navbar li:hover>.sub-menu,nav li:hover>.sub-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important}.nav-menu li:has(.sub-menu),.navbar li:has(.sub-menu),nav li:has(.sub-menu){position:relative}.sub-menu li{list-style:none;margin:0;padding:0}.sub-menu .menu-group-title,.sub-menu a{display:block!important;padding:10px 12px!important;color:#333!important;font-weight:600!important;text-decoration:none;transition:background-color .2s;white-space:nowrap;cursor:default}.sub-menu a:hover{background-color:#f5f5f5}#navMenu>li>.menu-group-title,.nav-menu>li>.menu-group-title{display:inline-block!important;padding:.5rem 1rem!important;color:var(--nav-color)!important;font-weight:500!important;line-height:1.7!important;cursor:default!important;user-select:none!important;vertical-align:middle!important;text-decoration:none!important;margin:0!important;transition:color .3s ease!important}#navMenu>li>.menu-group-title:hover,.nav-menu>li>.menu-group-title:hover{color:var(--nav-hover-color)!important;background-color:transparent!important}@media (max-width:768px){.nav-menu .sub-menu,.navbar .sub-menu,nav .sub-menu{position:static!important;transform:none!important;box-shadow:none!important;background:0 0!important;margin-top:0!important;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transition:max-height .3s ease,opacity .3s ease,visibility .3s ease,padding .3s ease;padding:0!important;border-radius:0!important}.sub-menu.mobile-expanded{max-height:none!important;overflow-y:visible!important;opacity:1!important;visibility:visible!important;padding:8px 0 8px 16px!important}[dir=rtl] .sub-menu.mobile-expanded,html[lang=ar] .sub-menu.mobile-expanded,html[lang=he] .sub-menu.mobile-expanded{padding:8px 16px 8px 0!important}.nav-menu li:hover>.sub-menu,.navbar li:hover>.sub-menu,nav li:hover>.sub-menu{opacity:0;visibility:hidden;pointer-events:none}.nav-menu li>.sub-menu.mobile-expanded,.navbar li>.sub-menu.mobile-expanded,nav li>.sub-menu.mobile-expanded{opacity:1!important;visibility:visible!important;pointer-events:auto!important}.sub-menu a{padding:10px 0!important;display:block!important;font-size:14px!important;white-space:normal!important}.sub-menu a:hover{background-color:transparent!important}.nav-menu li:has(.sub-menu),.navbar li:has(.sub-menu),nav li:has(.sub-menu){display:flex!important;flex-wrap:wrap!important;align-items:center!important;position:relative!important;min-height:44px!important}#navMenu>li>.menu-group-title,.nav-menu li:has(.sub-menu)>a,.nav-menu>li>.menu-group-title,.navbar li:has(.sub-menu)>a,nav li:has(.sub-menu)>a{flex:1!important;min-width:0!important}#navMenu>li>.menu-group-title,.nav-menu>li>.menu-group-title{padding:0!important;line-height:inherit!important}.nav-menu li:has(.sub-menu)>.sub-menu,.navbar li:has(.sub-menu)>.sub-menu,nav li:has(.sub-menu)>.sub-menu{flex-basis:100%!important;width:100%!important}#navMenu li:has(.sub-menu)>a [class*=arrow],#navMenu li:has(.sub-menu)>a [class*=chevron],.nav-menu li:has(.sub-menu)>a .fa-angle-down,.nav-menu li:has(.sub-menu)>a .fa-chevron-down,.nav-menu li:has(.sub-menu)>a [class*=arrow],.nav-menu li:has(.sub-menu)>a [class*=chevron],nav li:has(.sub-menu)>a [class*=arrow],nav li:has(.sub-menu)>a [class*=chevron]{display:none!important;visibility:hidden!important}.mobile-submenu-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:auto!important;background:0 0!important;border:none!important;cursor:pointer!important;padding:0!important;margin:0!important;position:static!important;flex-shrink:0!important;align-self:stretch!important;z-index:2!important;-webkit-tap-highlight-color:transparent}.mobile-submenu-toggle::after{content:''!important;display:block!important;width:0!important;height:0!important;border-left:6px solid transparent!important;border-right:6px solid transparent!important;border-top:7px solid currentColor!important;transition:transform .3s ease!important}.mobile-submenu-toggle.expanded::after{transform:rotate(180deg)!important}}@media (min-width:769px){.mobile-submenu-toggle{display:none!important}}</style><script id="zappy-mobile-menu-script">!function(){function e(){if(window.innerWidth>768)return document.querySelectorAll(".mobile-submenu-toggle").forEach(e=>e.remove()),document.querySelectorAll(".sub-menu.mobile-expanded").forEach(e=>{e.classList.remove("mobile-expanded")}),void console.log("[MOBILE MENU] Desktop mode - cleanup done");console.log("[MOBILE MENU] Initializing mobile menu toggles...");const e=document.querySelectorAll(".nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)");console.log("[MOBILE MENU] Found",e.length,"items with submenus"),e.forEach(function(e){if(e.querySelector(".mobile-submenu-toggle"))return;const t=e.querySelector(".sub-menu"),n=e.querySelector(":scope > a")||e.querySelector(":scope > .menu-group-title");if(!t||!n)return;const o=document.createElement("button");o.className="mobile-submenu-toggle",o.setAttribute("aria-label","Toggle submenu"),o.setAttribute("type","button"),n.insertAdjacentElement("afterend",o),console.log("[MOBILE MENU] Created toggle button for:",n.textContent?.trim()),o.addEventListener("click",function(e){e.preventDefault(),e.stopPropagation();const n=t.classList.contains("mobile-expanded");document.querySelectorAll(".sub-menu.mobile-expanded").forEach(function(e){if(e!==t){e.classList.remove("mobile-expanded");const t=e.parentElement.querySelector(".mobile-submenu-toggle");t&&t.classList.remove("expanded")}}),t.classList.toggle("mobile-expanded"),o.classList.toggle("expanded"),console.log("[MOBILE MENU] Toggled submenu:",n?"collapsed":"expanded")})})}let t;"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e(),window.addEventListener("resize",function(){clearTimeout(t),t=setTimeout(e,250)});const n=new MutationObserver(function(t){t.forEach(function(t){if("attributes"===t.type&&"class"===t.attributeName){const n=t.target;(n.classList.contains("active")||"none"!==n.style.display)&&(console.log("[MOBILE MENU] Mobile menu became visible, re-initializing..."),setTimeout(e,100))}})});document.querySelectorAll(".mobile-menu, .nav-menu, #navMenu").forEach(function(e){n.observe(e,{attributes:!0,attributeFilter:["class","style"]})})}()</script><link href="/styles.css" rel="stylesheet"><style id="zappy-widget-visibility">#mic-access-tool-box,#mic-access-tool-general-button,#mic-init-access-tool #mic-access-tool-box,#mic-init-access-tool #mic-access-tool-general-button,#mic-init-access-tool .mic-access-tool-general-button,._access-icon,._access-menu,.mic-access-tool-box,.mic-access-tool-general-button,div[id*=mic-access-tool-box]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}</style></head><body><nav class="navbar" dir="rtl" style="background-color:transparent !important;box-shadow:none"><button aria-label="Menu" class="mobile-toggle" data-element-id="btn-1774276400878-env9d1yck" data-element-type="button" data-native-element="true" id="mobileToggle"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" style="width:24px !important;height:24px !important;display:block !important" class="hamburger-icon"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg fill="none" height="24" viewBox="0 0 24 24" width="24" style="display:none !important;width:24px !important;height:24px !important" class="close-icon"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button aria-label="Call" class="phone-header-btn" data-element-id="btn-1774276400878-nmvqkfkrh" data-element-type="button" data-native-element="true" data-phone><svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" style="width:24px;height:24px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></button><div class="nav-container"><div class="nav-right-group"><div class="nav-brand"><a href="/" class="logo-link">HOUSE OF SILVER</a></div><ul class="nav-menu" id="navMenu"><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a><ul class="sub-menu"><li><a href="/silver-magazine/transition-cut-for-silver-hair">תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</a></li></ul></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/copy">קהילה ומדיה (copy)</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="nav-cta-container"><span class="nav-follow-label">עקבי אחרינו</span><div class="nav-social-icons"><a href="https://facebook.com/houseofsilver" class="nav-social-icon" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/houseofsilver" class="nav-social-icon" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@houseofsilver" class="nav-social-icon" aria-label="TikTok" rel="noopener noreferrer" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@houseofsilver" class="nav-social-icon" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube"></i></a></div></div></div></nav><script>// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') &amp;&amp; bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage &amp;&amp; bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb &amp;&amp; rgb.length &gt;= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-dark)) !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth &lt;= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '50%', 'important');
+          mobileToggle.style.setProperty('transform', 'translateY(-50%)', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '50%', 'important');
+          phoneBtn.style.setProperty('transform', 'translateY(-50%)', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu on button click - use newToggle now
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = this.querySelector('.hamburger-icon');
+      const closeIcon = this.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    });
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length &gt; 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // === WHATSAPP BUTTON VISIBILITY FIX ===
+    // Ensure WhatsApp floating button is hidden on desktop and visible on mobile
+    // IMPORTANT: Only target the floating button by its class, NOT generic wa.me links
+    const handleWhatsAppVisibility = function() {
+      const whatsappBtn = document.querySelector('.whatsapp-float');
+      if (whatsappBtn) {
+        const isDesktop = window.innerWidth &gt;= 769;
+        if (isDesktop) {
+          whatsappBtn.style.setProperty('display', 'none', 'important');
+          whatsappBtn.style.setProperty('visibility', 'hidden', 'important');
+          whatsappBtn.style.setProperty('opacity', '0', 'important');
+          whatsappBtn.style.setProperty('pointer-events', 'none', 'important');
+          console.log('[WhatsApp] Button hidden on desktop');
+        } else {
+          whatsappBtn.style.removeProperty('display');
+          whatsappBtn.style.removeProperty('visibility');
+          whatsappBtn.style.removeProperty('opacity');
+          whatsappBtn.style.removeProperty('pointer-events');
+          console.log('[WhatsApp] Button visible on mobile');
+        }
+      }
+    };
+    
+    // Run on load
+    handleWhatsAppVisibility();
+    
+    // Run on resize with debouncing
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(handleWhatsAppVisibility, 100);
+    });
+  });
+})();</script><main><section class="collaborations-intro-section" data-layout-spec="שיתופי פעולה-intro" dir="rtl"><div class="collab-intro-container"><div class="collab-intro-text"><div class="collab-intro-eyebrow"><span class="collab-eyebrow-line"></span><span class="collab-eyebrow-label">שיתופי פעולה</span></div><h1 class="collab-intro-heading">House of Silver —<br><br><br><br><br><br><br><br>שותפת הפרימיום שלך<br><br><br><br><br><br><br><br>ליופי, wellness<br><br><br><br><br><br><br><br>ותוכן דיגיטלי</h1><p class="collab-intro-body">House of Silver היא הפלטפורמה המובילה בישראל לנשים עם שיער כסוף ולנשים השוקלות את המעבר. בראשות מיטל פרץ גולן, מומחית ביופי ו-wellness, הקהילה שלנו — Silver Sisters — מונה מעל 17,000 נשים פעילות. אנחנו מציעות למותגים שותפות אמיתית: קהל ממוקד, תוכן עריכתי ברמה גבוהה, ואמינות בלתי מתפשרת.</p><div class="collab-intro-stats"><div class="collab-stat-item"><span class="collab-stat-number">17,000</span><span class="collab-stat-label">Silver Sisters בקהילה</span></div><div class="collab-stat-divider"></div><div class="collab-stat-item"><span class="collab-stat-number">פרימיום</span><span class="collab-stat-label">תוכן דיגיטלי ועריכתי</span></div><div class="collab-stat-divider"></div><div class="collab-stat-item"><span class="collab-stat-number">360°</span><span class="collab-stat-label">ביופי, wellness ואורח חיים</span></div></div><div class="collab-intro-ctas"><a href="#media-kit" class="btn-primary collab-cta-primary"><svg fill="none" height="16" viewBox="0 0 24 24" width="16" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>הורדת Media Kit</a><a href="#contact" class="btn-secondary collab-cta-secondary">יצירת קשר לשיתוף פעולה</a></div><div class="collab-intro-trust"><span class="collab-trust-badge"><svg fill="none" height="14" viewBox="0 0 24 24" width="14" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>מותג מוסמך ומוביל</span><span class="collab-trust-badge"><svg fill="none" height="14" viewBox="0 0 24 24" width="14" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>קהילה אותנטית ומעורבת</span></div></div><div class="collab-intro-image-wrapper"><div class="collab-image-frame"><img alt="אישה עם שיער כסוף אלגנטי — House of Silver" src="/assets/site-collaborations-intro-image-1-copy.webp" data-context="Elegant editorial portrait of a sophisticated silver-haired woman in her 50s, exuding confidence and modern beauty. She is wearing premium clothing, perhaps a silk blouse or structured blazer in neutral tones. The setting is a bright, airy studio or luxury interior with soft natural light. The mood is aspirational, warm, and fashion-forward — reflecting the House of Silver brand identity. The image should feel like a high-end beauty magazine editorial, with clean composition and a soft ivory/warm background." data-placeholder="collaborations-intro-image-1" height="720" width="580"><div class="collab-image-accent-bar"></div><div class="collab-image-caption-badge"><span class="collab-badge-text">Glow in Style</span></div></div><div class="collab-image-bg-shape" aria-hidden="true"></div></div></div><div class="collab-intro-bottom-rule" aria-hidden="true"></div></section><section class="collaborations-stats-section" data-layout-spec="שיתופי פעולה-stats" dir="rtl"><div class="collaborations-stats-container"><header class="showcase-header"><div class="showcase-header-inner"><span class="showcase-eyebrow">המגזין הכסוף</span><h2 class="showcase-title">תוכן מקצועי. סיפורים אמיתיים.<br><br><br><br><br><br><br><br></h2><div class="showcase-rule"></div></div></header><div class="collaborations-stats-grid"><article class="collaborations-stat-card collaborations-stat-card--hero"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">17,000</span><span class="collaborations-stat-unit">נשים</span></div><h3 class="collaborations-stat-label">קהילת Silver Sisters</h3><p class="collaborations-stat-desc">קהילה חיה ופעילה של נשים עם שיער כסוף – מעורבות אמיתית, שיחות יומיומיות ואמון עמוק במותג.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="38" viewBox="0 0 38 38" width="38" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="6" stroke="currentColor" stroke-width="1.2"/><circle cx="26" cy="11" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M2 30c0-5 5-9 11-9s11 4 11 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M26 20c4 0 8 3 8 8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></article><article class="collaborations-stat-card"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">1</span><span class="collaborations-stat-unit">#</span></div><h3 class="collaborations-stat-label">מומחיות ייחודית בנישה</h3><p class="collaborations-stat-desc">הפלטפורמה המובילה בישראל המוקדשת אך ורק לביוטי ו-wellness לנשים עם שיער כסוף – סמכות בלתי מעורערת.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="36" viewBox="0 0 36 36" width="36" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><polygon points="18,3 22,13 33,13 24,20 27,31 18,24 9,31 12,20 3,13 14,13" stroke="currentColor" stroke-linejoin="round" stroke-width="1.2"/></svg></div></article><article class="collaborations-stat-card"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">3</span><span class="collaborations-stat-unit">ערוצים</span></div><h3 class="collaborations-stat-label">עומק עריכתי ותוכן מקצועי</h3><p class="collaborations-stat-desc">Hair Lab, Style &amp; Glow ו-Silver Stories – מגזין דיגיטלי יוקרתי עם תוכן מקצועי, השראתי ואותנטי.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="36" viewBox="0 0 36 36" width="36" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><rect height="28" rx="2" stroke="currentColor" stroke-width="1.2" width="28" x="4" y="4"/><line x1="10" x2="26" y1="13" y2="13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="10" x2="26" y1="19" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="10" x2="19" y1="25" y2="25" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></article><article class="collaborations-stat-card"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">גבוהה</span></div><h3 class="collaborations-stat-label">מעורבות רגשית עמוקה</h3><p class="collaborations-stat-desc">קהל שמחובר לערכי המותג ברמה האישית – נשים שמשקיעות בעצמן ומחפשות מוצרים ושירותים שמכבדים את הבחירה שלהן.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="36" viewBox="0 0 36 36" width="36" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><path d="M18 31s-13-8-13-17a8 8 0 0 1 13-6.2A8 8 0 0 1 31 14c0 9-13 17-13 17z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></div></article><article class="collaborations-stat-card"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">פרימיום</span></div><h3 class="collaborations-stat-label">אמון ביועצת מקצועית</h3><p class="collaborations-stat-desc">מיטל פרץ גולן – מומחית מוכרת עם שנות ניסיון בביוטי ו-wellness, המובילה תהליכי ייעוץ אישי ברמה הגבוהה ביותר.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="36" viewBox="0 0 36 36" width="36" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="12" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M6 30c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M24 20l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></article><article class="collaborations-stat-card"><div class="collaborations-stat-accent-line"></div><div class="collaborations-stat-inner"><div class="collaborations-stat-number-wrap"><span class="collaborations-stat-number">עולמי</span></div><h3 class="collaborations-stat-label">זהות ויזואלית עריכתית</h3><p class="collaborations-stat-desc">אסתטיקה ייחודית ומוקפדת – שיתוף פעולה עם House of Silver מעניק למותגכם נוכחות בעולם הסילבר הגלובלי.</p></div><div class="collaborations-stat-icon"><svg fill="none" height="36" viewBox="0 0 36 36" width="36" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.2"/><ellipse cx="18" cy="18" rx="6" ry="14" stroke="currentColor" stroke-width="1.2"/><line x1="4" x2="32" y1="18" y2="18" stroke="currentColor" stroke-width="1.2"/></svg></div></article></div><div class="collaborations-stats-audience"><div class="collaborations-stats-audience-inner"><div class="collaborations-stats-audience-accent"></div><p class="collaborations-stats-audience-text">קהל ה-Silver Sisters הוא אחד הקהלים האיכותיים ביותר בעולם הביוטי הישראלי: נשים מודעות לסטייל, משקיעות בעצמן, ומונעות על ידי אמון אמיתי בתוכן ובמוביל הדעה שהן בחרו לעקוב אחריו. הן לא מחפשות פרסום – הן מחפשות המלצה אותנטית.</p></div></div></div></section><section class="collaborations-partnerships-section" data-layout-spec="שיתופי פעולה-partnerships" dir="rtl"><div class="collab-container"><header class="collab-header"><span class="collab-eyebrow">שיתופי פעולה</span><h2 class="collab-title">בואו נצור משהו יוצא דופן יחד</h2><p class="collab-subtitle">House of Silver מציעה שותפויות מותאמות אישית למותגי יופי ו-wellness שרוצים להגיע לקהל נשים בוגרות, מעוצבות ובעלות השפעה. עם קהילה של 17,000 Silver Sisters, אנחנו הפלטפורמה הפרימיום לתוכן כסוף.</p></header><div class="collab-grid"><article class="collab-card"><div class="collab-card-image-wrap"><img alt="תוכן עורכי ממומן – House of Silver" src="/assets/site-collaborations-partnerships-image-1-copy.webp" data-context="Elegant silver-haired woman in her 50s photographed in a luxurious editorial setting, reading a digital magazine on a tablet, soft warm studio lighting, beauty and wellness brand atmosphere, sophisticated and empowering mood" data-placeholder="collaborations-partnerships-image-1" height="400" width="600" class="collab-card-img"><div class="collab-card-img-overlay"></div></div><div class="collab-card-body"><span class="collab-card-tag">תוכן עורכי</span><h3 class="collab-card-title">תוכן עורכי ממומן</h3><p class="collab-card-desc">מאמרים מקצועיים, סקירות מוצר וסיפורי מותג המשולבים בצורה אורגנית במגזין הדיגיטלי של House of Silver — Hair Lab, Style &amp; Glow ו-Silver Stories.</p><div class="collab-card-details"><div class="collab-detail-row"><span class="collab-detail-label">המותג מקבל:</span><span class="collab-detail-text">חשיפה עמוקה לקהל ממוקד, אמינות עורכית ונוכחות במגזין פרימיום</span></div><div class="collab-detail-row"><span class="collab-detail-label">House of Silver תורמת:</span><span class="collab-detail-text">כתיבה מקצועית, עריכה, צילום ופרסום בכל הפלטפורמות</span></div><div class="collab-detail-row"><span class="collab-detail-label">מתאים במיוחד ל:</span><span class="collab-detail-text">מותגי טיפוח שיער, קוסמטיקה ו-wellness המכוונים לנשים 45+</span></div></div></div></article><article class="collab-card"><div class="collab-card-image-wrap"><img alt="סיפור מותג בהובלת מומחה – House of Silver" src="/assets/site-collaborations-partnerships-image-2-copy.webp" data-context="Mital Peretz Golan style expert with silver hair presenting a beauty brand product in an intimate studio setting, warm editorial lighting, luxury wellness atmosphere, professional consultation mood" data-placeholder="collaborations-partnerships-image-2" height="400" width="600" class="collab-card-img"><div class="collab-card-img-overlay"></div></div><div class="collab-card-body"><span class="collab-card-tag">סיפור מותג</span><h3 class="collab-card-title">סיפור מותג בהובלת מיטל</h3><p class="collab-card-desc">מיטל פרץ גולן, מנהלת קהילת Silver Sisters ומומחית ביופי ו-wellness, מציגה את המותג שלכם בקולה האותנטי — בוידאו, פודקאסט, אינסטגרם או תוכן ייעודי.</p><div class="collab-card-details"><div class="collab-detail-row"><span class="collab-detail-label">המותג מקבל:</span><span class="collab-detail-text">הסמכה מקצועית, קרבה לקהל ואמינות מהאוטוריטה המובילה בתחום</span></div><div class="collab-detail-row"><span class="collab-detail-label">House of Silver תורמת:</span><span class="collab-detail-text">נוכחות אישית של מיטל, יצירת תוכן, הפצה ומעורבות קהילתית</span></div><div class="collab-detail-row"><span class="collab-detail-label">מתאים במיוחד ל:</span><span class="collab-detail-text">מותגים המחפשים פנים אמינות ומוכרות בקהל הנשים הבוגרות</span></div></div></div></article><article class="collab-card"><div class="collab-card-image-wrap"><img alt="אקטיבציות קהילתיות – Silver Sisters" src="/assets/site-collaborations-partnerships-image-3-copy.webp" data-context="Group of elegant silver-haired women at a luxury wellness event or workshop, warm inviting atmosphere, community gathering, empowered and stylish, soft natural lighting, beauty brand activation" data-placeholder="collaborations-partnerships-image-3" height="400" width="600" class="collab-card-img"><div class="collab-card-img-overlay"></div></div><div class="collab-card-body"><span class="collab-card-tag">קהילה</span><h3 class="collab-card-title">אקטיבציות לקהילת Silver Sisters</h3><p class="collab-card-desc">גישה ישירה לקהילת ה-Silver Sisters — 17,000 נשים פעילות ומעורבות. אירועים, סקרים, קמפיינים ייעודיים, מוצרי טסטינג ושיח קהילתי אותנטי.</p><div class="collab-card-details"><div class="collab-detail-row"><span class="collab-detail-label">המותג מקבל:</span><span class="collab-detail-text">פידבק אמיתי, חשיפה ממוקדת ונוכחות בשיח הכי חם בתחום</span></div><div class="collab-detail-row"><span class="collab-detail-label">House of Silver תורמת:</span><span class="collab-detail-text">ניהול קמפיין, תיאום קהילתי, תוכן ותגובות אורגניות</span></div><div class="collab-detail-row"><span class="collab-detail-label">מתאים במיוחד ל:</span><span class="collab-detail-text">מותגים שרוצים להיכנס לשוק הנשים הבוגרות בצורה אמינה ומשמעותית</span></div></div></div></article><article class="collab-card"><div class="collab-card-image-wrap"><img alt="שותפויות קמפיין יופי ו-wellness" src="/assets/site-collaborations-partnerships-image-4-copy.webp" data-context="Flat lay of premium beauty and wellness products — serums, hair care, supplements — arranged on a marble surface with silver hair strands and golden accents, luxury brand campaign photography" data-placeholder="collaborations-partnerships-image-4" height="400" width="600" class="collab-card-img"><div class="collab-card-img-overlay"></div></div><div class="collab-card-body"><span class="collab-card-tag">קמפיין</span><h3 class="collab-card-title">שותפויות קמפיין יופי ו-Wellness</h3><p class="collab-card-desc">קמפיינים מלאים המשלבים תוכן, הפצה, ייעוץ מקצועי וחשיפה רב-ערוצית — מהמגזין הדיגיטלי ועד לניוזלטר, רשתות חברתיות ואירועים.</p><div class="collab-card-details"><div class="collab-detail-row"><span class="collab-detail-label">המותג מקבל:</span><span class="collab-detail-text">נוכחות מלאה על פני כל ערוצי House of Silver, מדידה ודוחות</span></div><div class="collab-detail-row"><span class="collab-detail-label">House of Silver תורמת:</span><span class="collab-detail-text">אסטרטגיה, יצירת תוכן, הפצה ומעקב ביצועים לאורך כל הקמפיין</span></div><div class="collab-detail-row"><span class="collab-detail-label">מתאים במיוחד ל:</span><span class="collab-detail-text">מותגים המחפשים פתרון שיווקי מקיף עם ROI ברור וקהל מוגדר</span></div></div></div></article></div><div class="collab-cta-bar"><div class="collab-cta-content"><p class="collab-cta-text">מעוניינים לשמוע עוד? הורידו את ה-Media Kit שלנו או צרו קשר לשיחת היכרות.</p><div class="collab-cta-actions"><a href="#contact" class="btn-primary collab-btn-primary">צרו קשר</a><a href="#media-kit" class="btn-secondary collab-btn-secondary">הורידו Media Kit</a></div></div><div class="collab-stats"><div class="collab-stat"><span class="collab-stat-number">17,000</span><span class="collab-stat-label">Silver Sisters פעילות</span></div><div class="collab-stat-divider"></div><div class="collab-stat"><span class="collab-stat-number">85%</span><span class="collab-stat-label">נשים 40–65</span></div><div class="collab-stat-divider"></div><div class="collab-stat"><span class="collab-stat-number">4+</span><span class="collab-stat-label">ערוצי הפצה</span></div></div></div></div></section><section class="collaborations-audience-section" data-layout-spec="שיתופי פעולה-audience" dir="rtl"><div class="ca-container"><div class="ca-text-col"><span class="ca-eyebrow">הקהילה שלנו</span><h2 class="ca-heading">מי היא האישה של House of Silver?</h2><p class="ca-body">היא האישה שהחליטה להפסיק להסתיר – ולהתחיל לזהור. נשים בגילאי 35 עד 65 עם שיער כסוף, לבן או מלוח-ופלפל, שבחרו לאמץ את הגוון הטבעי שלהן כהצהרת סגנון אמיצה ומודעת. הן לא ויתרו על עצמן – הן שדרגו את עצמן.</p><p class="ca-body">קהל נוסף ומשמעותי הוא הנשים שנמצאות בתהליך המעבר – ה"בתהליך" – המחפשות ליווי מקצועי, פרוטוקול טיפוח מדויק, ותמיכה קהילתית חמה שתעזור להן לעבור את הדרך בביטחון ובאלגנטיות. עבורן, House of Silver הוא בית, מדריך, ומקור השראה.</p><p class="ca-body">17,000 Silver Sisters מרחבי ישראל ומהעולם מהוות קהילה פעילה, מעורבת ובעלת כוח קנייה גבוה. הן מחפשות מוצרים ושירותים שמכבדים את הבחירה שלהן – בתחומי טיפוח שיער, סקין-קאר, תוספי תזונה, אופנה ו-wellness. מותגים שמבינים את הערכים הללו ימצאו כאן קהל קשוב, נאמן ואוהב.</p><div class="ca-brand-fit"><div class="ca-brand-fit-icon"><svg fill="none" height="22" viewBox="0 0 24 24" width="22" aria-hidden="true" data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="ca-brand-fit-content"><strong class="ca-brand-fit-label">התאמה מושלמת למותגים</strong><p class="ca-brand-fit-text">קטגוריות עם פוטנציאל שיתוף פעולה גבוה: טיפוח שיער פרימיום, סקין-קאר, תוספי תזונה ו-wellness, אופנה ואקססוריז, ורפואה אסתטית.</p></div></div></div><div class="ca-collage-col"><div class="ca-collage"><div class="ca-img-main"><img alt="אישה עם שיער כסוף אלגנטי – קהל היעד של House of Silver" src="/assets/site-collaborations-audience-image-1-copy.webp" data-context="Elegant silver-haired Israeli woman in her 50s, styled with sophistication, wearing a chic neutral-toned outfit, soft natural light, editorial beauty photography, warm and aspirational mood, close-up showing healthy luminous silver hair texture" data-placeholder="collaborations-audience-image-1" height="360" width="540"></div><div class="ca-img-row"><div class="ca-img-secondary"><img alt="קהילת Silver Sisters – נשים עם שיער כסוף" src="/assets/site-collaborations-audience-image-2-copy.webp" data-context="Two silver-haired women in their 40s-60s laughing together in a bright modern cafe, community warmth, natural light, lifestyle photography, silver and white hair beautifully styled, relaxed and joyful atmosphere" data-placeholder="collaborations-audience-image-2" height="220" width="260"></div><div class="ca-img-tertiary"><img alt="טיפוח שיער כסוף פרימיום" src="/assets/site-collaborations-audience-image-3-copy.webp" data-context="Close-up detail of beautifully maintained silver and white hair, premium hair care product beside it, soft studio lighting, luxury beauty editorial aesthetic, clean minimal composition" data-placeholder="collaborations-audience-image-3" height="220" width="260"></div></div><div class="ca-collage-accent-line"></div></div></div></div></section><section class="collaborations-cta-section" data-layout-spec="שיתופי פעולה-cta" dir="rtl"><div class="collaborations-cta-inner"><div class="collaborations-cta-content"><h2 class="collaborations-cta-heading">מוכנים להתחיל שיחה?</h2><div class="collaborations-cta-divider" aria-hidden="true"></div><p class="collaborations-cta-text">House of Silver יוצרת שיתופי פעולה המושתתים על אמון, מצוינות ויזואלית ורלוונטיות אמיתית לקהל. אנחנו מחברות בין מותגי יופי ו-wellness מובילים לקהילת Silver Sisters — 17,000 נשים שבחרו בסגנון חיים של חופש, ביטחון ואסתטיקה מעולה.</p><div class="collaborations-cta-actions"><a href="#" class="cta-btn cta-btn--primary">הורדת Media Kit</a><a href="#contact" class="cta-btn cta-btn--secondary">צרו קשר עם House of Silver</a></div></div></div></section></main><footer class="site-footer" dir="rtl"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"><div class="footer-top"><div class="footer-container"><div class="footer-grid"><div class="footer-col footer-brand"><div data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-wrapper-margins-applied="true" data-zappy-zoom-clip="true" data-zappy-zoom-wrapper="true" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-width-mode="px" style="position:relative !important;overflow:hidden !important;width:101px !important;max-width:100% !important;margin-left:auto !important;margin-right:auto !important;height:45px !important;display:block !important"><img alt="House of Silver" src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" class="logo" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom="1" style="position:absolute !important;object-fit:cover !important;object-position:44% 63%;margin:0px !important;left:-0.022929% !important;top:0% !important;width:100.052% !important;height:100% !important;max-width:none !important;max-height:none !important;display:block;filter:none !important"></div><p class="footer-tagline">יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p><div class="footer-accent-line"></div></div><div class="footer-col"><h4 class="footer-heading">ניווט מהיר</h4><ul class="footer-links"><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-col"><h4 class="footer-heading">יצירת קשר</h4><ul class="footer-contact"><li><i class="fas footer-icon fa-envelope" data-element-id="icon-1774279661942-2epv7enkw" data-element-type="icon" data-icon-type="fontawesome" style="cursor:pointer"></i><a href="/cdn-cgi/l/email-protection#83d8e1f6f0eaede6f0f0dce6eee2eaefde">[business_email]</a></li><li><i class="fas footer-icon fa-phone" data-element-id="icon-1774279661942-tm4wdty9h" data-element-type="icon" data-icon-type="fontawesome" style="cursor:pointer"></i><a href="tel:[business_phone]">[business_phone]</a></li><li><a href="/">HOUSE OF SILVER</a></li></ul></div><div class="footer-col footer-social-col"><h4 class="footer-heading">עקבי אחרינו</h4><div class="footer-social"><a href="https://facebook.com/houseofsilver" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/houseofsilver" aria-label="Instagram"><i class="fab fa-instagram" data-element-id="icon-1774279661942-cozakiatm" data-element-type="icon" data-icon-type="fontawesome"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp" data-element-id="icon-1774279661942-3a87lon5s" data-element-type="icon" data-icon-type="fontawesome"></i></a><a href="https://www.youtube.com/@houseofsilver" aria-label="YouTube" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube"></i></a></div><p class="footer-social-note">הצטרפי ברשתות החברתיות</p></div></div></div></div><div class="footer-bottom"><div class="footer-container footer-bottom-inner"><p class="footer-copyright">© 2026 סילבר סיסטרס ישראל. כל הזכויות שמורות.</p><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><span class="footer-divider">|</span><a href="/terms">תנאי שימוש</a><span class="footer-divider">|</span><a href="/accessibility">נגישות</a><span class="footer-divider">|</span><a href="https://zappy5.com" class="zappy-attribution" target="_blank">נוצר באמצעות Zappy</a></div></div></div></footer><a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><div data-integration="accessibility:toolbar"></div><script src="/script.js"></script><script id="zappy-mobile-submenu-script">!function(){function e(){if(window.innerWidth>768)return document.querySelectorAll(".mobile-submenu-toggle").forEach(function(e){e.remove()}),void document.querySelectorAll(".sub-menu.mobile-expanded").forEach(function(e){e.classList.remove("mobile-expanded")});document.querySelectorAll(".nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)").forEach(function(e){if(!e.querySelector(".mobile-submenu-toggle")){var t=e.querySelector(".sub-menu"),n=e.querySelector(":scope > a");if(t&&n){var o=document.createElement("button");o.className="mobile-submenu-toggle",o.setAttribute("aria-label","Toggle submenu"),o.setAttribute("type","button"),n.insertAdjacentElement("afterend",o),o.addEventListener("click",function(e){e.preventDefault(),e.stopPropagation(),document.querySelectorAll(".sub-menu.mobile-expanded").forEach(function(e){if(e!==t){e.classList.remove("mobile-expanded");var n=e.parentElement.querySelector(".mobile-submenu-toggle");n&&n.classList.remove("expanded")}}),t.classList.toggle("mobile-expanded"),o.classList.toggle("expanded")})}}})}var t;"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e(),window.addEventListener("resize",function(){clearTimeout(t),t=setTimeout(e,250)});var n=new MutationObserver(function(t){t.forEach(function(t){if("attributes"===t.type){var n=t.target;n.classList&&(n.classList.contains("active")||n.classList.contains("open"))&&setTimeout(e,100)}})});setTimeout(function(){document.querySelectorAll(".mobile-menu, .nav-menu, #navMenu, nav").forEach(function(e){n.observe(e,{attributes:!0,attributeFilter:["class","style"]})})},500)}()</script><script>!function(){var t=!1;function e(t){var e=t.querySelector("img");if(e&&("true"===e.getAttribute("data-hero-bg")||"true"===e.getAttribute("data-hero-background")))return!0;var r=(t.style.position||"").replace(/\s*!important\s*/g,"").trim(),o=(t.style.width||"").replace(/\s*!important\s*/g,"").trim(),a=(t.style.height||"").replace(/\s*!important\s*/g,"").trim();return"absolute"===r&&"100%"===o&&"100%"===a}function r(){t||(t=!0,document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(t){if(!e(t)){var r=t.style.getPropertyValue("width"),o=parseFloat(t.getAttribute("data-zappy-zoom-wrapper-width"))||0,a=parseFloat(t.getAttribute("data-zappy-zoom-wrapper-height"))||0;if(r||o>0&&a>0){t._zappyDesktop||(t._zappyDesktop={wStyle:t.getAttribute("style")});var p=t.querySelector("img");if(p){p._zappyDesktop||(p._zappyDesktop={src:p.getAttribute("src"),style:p.getAttribute("style")});var i,s,y,n,l=p.getAttribute("data-zappy-mobile-zoom"),m=parseFloat(l),c=p.getAttribute("data-zappy-mobile-src"),d=p.getAttribute("data-zappy-mobile-object-position"),u=t.parentElement?((t.parentElement.style.overflow||"")+(window.getComputedStyle(t.parentElement).overflow||"")).trim():"",h=-1!==u.indexOf("hidden")||-1!==u.indexOf("clip");if(h||t.style.setProperty("width","100%","important"),t.style.setProperty("max-width","100%","important"),c&&(p.src=c),o>0&&a>0){var b=isFinite(m)&&m>0?m:parseFloat(p.getAttribute("data-zappy-zoom"))||1,g=d||p.getAttribute("data-zappy-object-position")||p.style.objectPosition||"50% 50%";t.style.setProperty("overflow","hidden","important"),t.style.setProperty("position","relative","important"),t.style.setProperty("width","100%","important"),t.style.setProperty("max-width","100%","important"),o>0&&a>0&&(t.style.setProperty("padding-bottom","0","important"),t.style.setProperty("aspect-ratio",o+"/"+a,"important"),t.style.setProperty("height","auto","important")),z(p,t,g,b),p.complete&&p.naturalWidth>0||(s=t,y=g,n=b,(i=p).addEventListener("load",function t(){i.removeEventListener("load",t);try{z(i,s,y,n)}catch(t){}}))}else h||t.style.setProperty("height","auto","important"),p.style.setProperty("position","relative","important"),p.style.setProperty("width","100%","important"),p.style.setProperty("height","auto","important"),p.style.setProperty("max-width","100%","important"),p.style.setProperty("max-height",h?"none":"400px","important"),p.style.setProperty("object-fit","cover","important"),p.style.setProperty("left","0","important"),p.style.setProperty("top","0","important"),p.style.setProperty("transform","none","important")}}}function z(t,e,r,o){var a=e.getBoundingClientRect();if(a&&a.width&&a.height){var p=t.naturalWidth||0,i=t.naturalHeight||0;if(p>0&&i>0){var s=function(t,e){return!isFinite(t)||t<=0||!isFinite(e)||e<=0?{w:100,h:100}:t>=e?{w:t/e*100,h:100}:{w:100,h:e/t*100}}(p/i,a.width/a.height),y=100,n=100;if(o>=1)y=s.w*o,n=s.h*o;else{var l=(o-.5)/.5;isFinite(l)||(l=0),y=100+(l=Math.max(0,Math.min(1,l)))*(s.w-100),n=100+l*(s.h-100)}var m=function(t){var e=50,r=50;try{var o=(t||"").match(/(-?d+(?:.d+)?)%s+(-?d+(?:.d+)?)%/);o&&(e=parseFloat(o[1]),r=parseFloat(o[2]))}catch(t){}return isFinite(e)||(e=50),isFinite(r)||(r=50),{x:Math.max(0,Math.min(100,e)),y:Math.max(0,Math.min(100,r))}}(r),c=(100-y)*(m.x/100),d=(100-n)*(m.y/100);t.style.setProperty("position","absolute","important"),t.style.setProperty("left",c+"%","important"),t.style.setProperty("top",d+"%","important"),t.style.setProperty("width",y+"%","important"),t.style.setProperty("height",n+"%","important"),t.style.setProperty("max-width","none","important"),t.style.setProperty("max-height","none","important"),t.style.setProperty("display","block","important"),t.style.setProperty("object-fit",o<1?"fill":"cover","important"),t.style.setProperty("transform","none","important"),t.style.setProperty("margin","0","important")}}}}),document.querySelectorAll("img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]").forEach(function(t){var r=t.closest('[data-zappy-zoom-wrapper="true"]');if(!r||e(r)){t._zappyDesktop||(t._zappyDesktop={src:t.getAttribute("src"),style:t.getAttribute("style")});var o=t.getAttribute("data-zappy-mobile-src"),a=t.getAttribute("data-zappy-mobile-object-position"),p=parseFloat(t.getAttribute("data-zappy-mobile-zoom"));if(o&&(t.src=o),a&&t.style.setProperty("object-position",a,"important"),p>1){t.style.setProperty("transform","scale("+p+")","important"),t.style.setProperty("transform-origin",a||"50% 50%","important");var i=t.parentElement;i&&i.style.setProperty("overflow","hidden","important")}}}))}function o(){var t=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(r){if(e(r)){r.style.setProperty("position","absolute","important"),r.style.setProperty("top","0","important"),r.style.setProperty("left","0","important"),r.style.setProperty("width","100%","important"),r.style.setProperty("height","100%","important"),r.style.setProperty("max-width","none","important"),r.style.setProperty("overflow","hidden","important"),r.setAttribute("data-zappy-zoom-wrapper-width-mode","full");var o=r.querySelector("img");if(o&&(o.style.setProperty("width","100%","important"),o.style.setProperty("height","100%","important"),o.style.setProperty("object-fit","cover","important"),o.style.setProperty("position","relative","important"),o.style.setProperty("top","0","important"),o.style.setProperty("left","0","important"),o.style.setProperty("max-width","none","important"),o.style.setProperty("max-height","none","important"),o.style.setProperty("display","block","important"),t)){var a=o.getAttribute("data-zappy-mobile-src"),p=o.getAttribute("data-zappy-mobile-object-position"),i=parseFloat(o.getAttribute("data-zappy-mobile-zoom"));a&&(o._zappyDesktop||(o._zappyDesktop={src:o.getAttribute("src"),style:o.getAttribute("style")}),o.src=a),p&&o.style.setProperty("object-position",p,"important"),i>1&&(o.style.setProperty("transform","scale("+i+")","important"),o.style.setProperty("transform-origin",p||"50% 50%","important"))}}})}function a(){o();var a=window.matchMedia("(max-width:768px)");function p(a){a.matches?r():t&&(t=!1,document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(t){t._zappyDesktop&&null!=t._zappyDesktop.wStyle&&t.setAttribute("style",t._zappyDesktop.wStyle);var e=t.querySelector("img");e&&e._zappyDesktop&&(null!=e._zappyDesktop.src&&e.setAttribute("src",e._zappyDesktop.src),null!=e._zappyDesktop.style?e.setAttribute("style",e._zappyDesktop.style):e.removeAttribute("style"))}),document.querySelectorAll("img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]").forEach(function(t){var r=t.closest('[data-zappy-zoom-wrapper="true"]');r&&!e(r)||t._zappyDesktop&&(null!=t._zappyDesktop.src&&t.setAttribute("src",t._zappyDesktop.src),null!=t._zappyDesktop.style?t.setAttribute("style",t._zappyDesktop.style):t.removeAttribute("style"))}),o())}a.matches&&r();try{a.addEventListener("change",p)}catch(t){a.addListener(p)}}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",a):setTimeout(a,50)}()</script></body></html>

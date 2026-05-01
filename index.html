@@ -572,9 +572,9 @@
         list-style: none;
         pointer-events: none;
       }
-      .nav-menu li:hover > .sub-menu,
-      nav li:hover > .sub-menu,
-      .navbar li:hover > .sub-menu {
+      .nav-menu li:hover &gt; .sub-menu,
+      nav li:hover &gt; .sub-menu,
+      .navbar li:hover &gt; .sub-menu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -605,57 +605,443 @@
         right: 0;
       }
     </style>
-    <link rel="stylesheet" href="/styles.css">
+          <style id="zappy-cta-mobile-style">
+            /* Hide CTA list item on desktop (tablets and up) */
+            @media (min-width: 769px) {
+              .nav-cta-item-mobile {
+                display: none !important;
+              }
+            }
+            /* Show CTA list item on mobile */
+            @media (max-width: 768px) {
+              .nav-cta-item-mobile {
+                display: list-item !important;
+              }
+            }
+          </style>
+        
+          <style id="zappy-nested-menu-style">
+            /* Desktop only: vertically center nav items */
+            @media (min-width: 769px) {
+              .nav-menu,
+              #navMenu {
+                align-items: center !important;
+              }
+            }
+            
+            /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+            }
+            
+            /* Desktop: show submenu on Menu Group hover */
+            li:has(.menu-group-title):hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when hovering */
+            }
+            
+            /* Hide menu items marked as hidden (overrides hover states) */
+            .zappy-hidden-menu-item,
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            
+            /* Keep submenu visible when hovering over the submenu itself */
+            .sub-menu:hover {
+              opacity: 1 !important;
+              visibility: visible !important;
+              pointer-events: auto !important;
+            }
+            
+            /* Nested dropdown menu styles - using more specific selectors */
+            .nav-menu .sub-menu,
+            nav .sub-menu,
+            .navbar .sub-menu {
+              display: block !important; /* Ensure submenu is in the DOM */
+              position: absolute !important;
+              top: 100%;
+              left: 0;
+              right: auto;
+              min-width: 200px;
+              background: white;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              padding: 8px 0;
+              margin-top: 0px; /* Remove gap to prevent hover loss */
+              opacity: 0 !important;
+              visibility: hidden !important;
+              transform: translateY(-10px);
+              transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+              z-index: 1000;
+              list-style: none;
+              pointer-events: none; /* Prevent interaction when hidden */
+            }
+            
+            /* RTL (Hebrew/Arabic) submenu positioning - align to right instead of left */
+            [dir="rtl"] .nav-menu .sub-menu,
+            [dir="rtl"] nav .sub-menu,
+            [dir="rtl"] .navbar .sub-menu,
+            html[lang="he"] .nav-menu .sub-menu,
+            html[lang="he"] nav .sub-menu,
+            html[lang="he"] .navbar .sub-menu,
+            html[lang="ar"] .nav-menu .sub-menu,
+            html[lang="ar"] nav .sub-menu,
+            html[lang="ar"] .navbar .sub-menu {
+              left: auto;
+              right: 0;
+            }
+            
+            /* Show submenu on parent hover - more specific selectors */
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
+              opacity: 1 !important;
+              visibility: visible !important;
+              transform: translateY(0) !important;
+              pointer-events: auto !important; /* Enable interaction when visible */
+            }
+            
+            /* Parent item must be relatively positioned */
+            .nav-menu li:has(.sub-menu),
+            nav li:has(.sub-menu),
+            .navbar li:has(.sub-menu) {
+              position: relative;
+            }
+            
+            /* Style for submenu items */
+            .sub-menu li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+            
+            .sub-menu a,
+            .sub-menu .menu-group-title {
+              display: block !important;
+              padding: 10px 12px !important;
+              color: #333 !important;
+              font-weight: 600 !important;
+              text-decoration: none;
+              transition: background-color 0.2s;
+              white-space: nowrap;
+              cursor: default;
+            }
+            
+            .sub-menu a:hover {
+              background-color: #f5f5f5;
+            }
+            
+            /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
+              display: inline-block !important;
+              padding: 0.5rem 1rem !important;
+              color: var(--nav-color) !important;
+              font-weight: 500 !important;
+              line-height: 1.7 !important;
+              cursor: default !important;
+              user-select: none !important;
+              vertical-align: middle !important;
+              text-decoration: none !important;
+              margin: 0 !important;
+              transition: color 0.3s ease !important;
+            }
+            
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
+              color: var(--nav-hover-color) !important;
+              background-color: transparent !important;
+            }
+            
+            /* On mobile, show nested menus as expandable accordion */
+            @media (max-width: 768px) {
+              /* Mobile submenu styling */
+              .nav-menu .sub-menu,
+              nav .sub-menu,
+              .navbar .sub-menu {
+                position: static !important;
+                transform: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                margin-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+                padding: 0 !important;
+                border-radius: 0 !important;
+              }
+              
+              /* Expanded state — no internal scroll; parent navMenu scrolls */
+              .sub-menu.mobile-expanded {
+                max-height: none !important;
+                overflow-y: visible !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                padding: 8px 0 8px 16px !important;
+              }
+              
+              /* RTL padding adjustment */
+              [dir="rtl"] .sub-menu.mobile-expanded,
+              html[lang="he"] .sub-menu.mobile-expanded,
+              html[lang="ar"] .sub-menu.mobile-expanded {
+                padding: 8px 16px 8px 0 !important;
+              }
+              
+              /* Disable hover behavior on mobile */
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+              }
+              
+              /* Enable visibility for expanded submenus */
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+              }
+              
+              .sub-menu a {
+                padding: 10px 0 !important;
+                display: block !important;
+                font-size: 14px !important;
+                white-space: normal !important;
+              }
+              
+              .sub-menu a:hover {
+                background-color: transparent !important;
+              }
+              
+              /* Parent item wrapper - flex layout with relative positioning for absolute toggle */
+              .nav-menu li:has(.sub-menu),
+              nav li:has(.sub-menu),
+              .navbar li:has(.sub-menu) {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                position: relative !important;
+                min-height: 44px !important;
+              }
+              
+              /* Parent link - takes full width since toggle is absolute (not a flex child) */
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                flex: 1 !important;
+                min-width: 0 !important;
+              }
+              
+              /* Normalize menu-group-title in mobile nav to match link alignment */
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
+                padding: 0 !important;
+                line-height: inherit !important;
+              }
+              
+              /* Submenu takes full width below parent */
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
+                flex-basis: 100% !important;
+                width: 100% !important;
+              }
+              
+              /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
+                display: none !important;
+                visibility: hidden !important;
+              }
+              
+              /* Toggle arrow button - flex child that stretches to match nav-link height */
+              .mobile-submenu-toggle {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 44px !important;
+                height: auto !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                position: static !important;
+                flex-shrink: 0 !important;
+                align-self: stretch !important;
+                z-index: 2 !important;
+                -webkit-tap-highlight-color: transparent;
+              }
+              
+              .mobile-submenu-toggle::after {
+                content: '' !important;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-left: 6px solid transparent !important;
+                border-right: 6px solid transparent !important;
+                border-top: 7px solid currentColor !important;
+                transition: transform 0.3s ease !important;
+              }
+              
+              /* Rotate arrow when expanded */
+              .mobile-submenu-toggle.expanded::after {
+                transform: rotate(180deg) !important;
+              }
+            }
+            
+            /* Hide toggle button on desktop */
+            @media (min-width: 769px) {
+              .mobile-submenu-toggle {
+                display: none !important;
+              }
+            }
+          </style>
+          
+          <script id="zappy-mobile-menu-script">
+            // Mobile menu toggle for nested submenus (including Menu Groups)
+            // Uses separate toggle button - link navigates, arrow toggles submenu
+            (function() {
+              function initMobileMenuToggles() {
+                // Only run on mobile
+                if (window.innerWidth > 768) {
+                  // Remove any toggle buttons on desktop
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
+                    menu.classList.remove('mobile-expanded');
+                  });
+                  console.log('[MOBILE MENU] Desktop mode - cleanup done');
+                  return;
+                }
+                
+                console.log('[MOBILE MENU] Initializing mobile menu toggles...');
+                
+                // Find all parent menu items (items with .sub-menu)
+                const menuItemsWithSubmenus = document.querySelectorAll(
+                  '.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)'
+                );
+                
+                console.log('[MOBILE MENU] Found', menuItemsWithSubmenus.length, 'items with submenus');
+                
+                menuItemsWithSubmenus.forEach(function(li) {
+                  // Skip if already has toggle button
+                  if (li.querySelector('.mobile-submenu-toggle')) {
+                    return;
+                  }
+                  
+                  const submenu = li.querySelector('.sub-menu');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
+                  
+                  if (!submenu || !parentLink) return;
+                  
+                  // Create toggle button
+                  const toggleBtn = document.createElement('button');
+                  toggleBtn.className = 'mobile-submenu-toggle';
+                  toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+                  toggleBtn.setAttribute('type', 'button');
 
-    <style id="zappy-dropdown-submenu-styles">
-      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
-      /* Base styles for dropdown submenus - parent must be positioned */
-      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
-      /* Submenu base - hidden by default */
-      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
-      /* CRITICAL: Desktop hover styles to show dropdown */
-      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Submenu item styling */
-      .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
-      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
-      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-      .sub-menu a:hover { background-color: #f5f5f5; }
-      /* RTL (Hebrew/Arabic) dropdown positioning */
-      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-      /* Desktop: show submenu on Menu Group hover */
-      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Menu Group title styling */
-      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
-      
-      /* ========== MOBILE SUBMENU STYLES ========== */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
-        /* Disable hover behavior on mobile */
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
-        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
-        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
-        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
-        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
-        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
-        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
-        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
-        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
-        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
-      }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
-    </style>
+                  // Insert toggle button after the link
+                  parentLink.insertAdjacentElement('afterend', toggleBtn);
+                  
+                  console.log('[MOBILE MENU] Created toggle button for:', parentLink.textContent?.trim());
+                  
+                  // Handle toggle button click - only toggles submenu
+                  toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isExpanded = submenu.classList.contains('mobile-expanded');
+                    
+                    // Close all other submenus first
+                    document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+                      if (menu !== submenu) {
+                        menu.classList.remove('mobile-expanded');
+                        const otherToggle = menu.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (otherToggle) otherToggle.classList.remove('expanded');
+                      }
+                    });
+                    
+                    // Toggle this submenu
+                    submenu.classList.toggle('mobile-expanded');
+                    toggleBtn.classList.toggle('expanded');
+                    
+                    console.log('[MOBILE MENU] Toggled submenu:', !isExpanded ? 'expanded' : 'collapsed');
+                  });
+                  
+                  // Parent link navigates normally - no preventDefault
+                });
+              }
+              
+              // Initialize on DOM load
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileMenuToggles);
+              } else {
+                initMobileMenuToggles();
+              }
+              
+              // Re-initialize on window resize (but use debounce to avoid too many calls)
+              let resizeTimer;
+              window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initMobileMenuToggles, 250);
+              });
+              
+              // Also initialize when mobile menu becomes visible
+              // This handles cases where the mobile menu is hidden initially
+              const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('active') || target.style.display !== 'none') {
+                      console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
+                      setTimeout(initMobileMenuToggles, 100);
+                    }
+                  }
+                });
+              });
+              
+              // Observe mobile menu containers
+              const mobileMenus = document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu');
+              mobileMenus.forEach(function(menu) {
+                observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+              });
+            })();
+          </script>
+    <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-widget-visibility">
       #mic-access-tool-general-button, .mic-access-tool-general-button,
@@ -671,23 +1057,23 @@
   <nav class="navbar" dir="rtl" style="background-color: transparent !important; box-shadow: none;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1774276400878-env9d1yck" data-native-element="true">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="width: 24px !important; height: 24px !important; display: block !important;">
-      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none !important; width: 24px !important; height: 24px !important;">
-      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
-  <button class="phone-header-btn" data-phone="" aria-label="Call" data-element-type="button" data-element-id="btn-1774276400878-nmvqkfkrh" data-native-element="true">
+  <button class="phone-header-btn" data-phone aria-label="Call" data-element-type="button" data-element-id="btn-1774276400878-nmvqkfkrh" data-native-element="true">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </button>
 
   <div class="nav-container">
     <div class="nav-right-group"><div class="nav-brand">
       <a href="/" class="logo-link">HOUSE OF SILVER</a>
-    </div><ul class="nav-menu" id="navMenu"><li><a href="/" data-i18n="nav-home">נעים להכיר</a></li><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a><ul class="sub-menu"><li><a href="/silver-magazine/transition-cut-for-silver-hair" class="nav-link">תספורת מעבר</a></li></ul></li><li><a href="/community-and-media">קהילה ומדיה</a></li></ul></div>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a><ul class="sub-menu"><li><a href="/silver-magazine/transition-cut-for-silver-hair">תספורת מעבר לשיער כסוף: איך לבחור גזירה שמחמיאה לתהליך</a></li></ul></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/copy">קהילה ומדיה (copy)</a></li><li><a href="/contact">צור קשר</a></li></ul></div>
 
     
 
@@ -738,12 +1124,12 @@
     // Check if background is transparent or rgba with 0 alpha
     const isTransparent = bgColor === 'transparent' || 
                          bgColor === 'rgba(0, 0, 0, 0)' ||
-                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+                         (bgColor.startsWith('rgba') &amp;&amp; bgColor.includes(', 0)'));
     
     if (isTransparent) {
       // Check for background-image or gradient
       const bgImage = computedStyle.backgroundImage;
-      if (bgImage && bgImage !== 'none') {
+      if (bgImage &amp;&amp; bgImage !== 'none') {
         console.log('[Navbar] Navbar has background image/gradient, using dark text');
         bgColor = 'rgb(240, 240, 240)'; // Assume light background
       } else {
@@ -756,7 +1142,7 @@
     
     // Calculate luminance to determine if background is light or dark
     const rgb = bgColor.match(/\d+/g);
-    if (rgb && rgb.length >= 3) {
+    if (rgb &amp;&amp; rgb.length &gt;= 3) {
       const r = parseInt(rgb[0]);
       const g = parseInt(rgb[1]);
       const b = parseInt(rgb[2]);
@@ -892,7 +1278,7 @@
       // ONLY apply inline positioning styles on mobile viewport
       // On desktop, the CSS handles hiding these buttons with display: none
       // Inline styles were breaking desktop layout by overriding CSS
-      const isMobileViewport = window.innerWidth <= 768;
+      const isMobileViewport = window.innerWidth &lt;= 768;
       
       if (mobileToggle) {
         // Icon sizing applies to all viewports for consistency
@@ -1083,7 +1469,7 @@
       phoneBtn.addEventListener('click', function() {
         // Get phone number from placeholder in page or use default
         const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-        const phoneNumber = phoneLinks.length > 0 
+        const phoneNumber = phoneLinks.length &gt; 0 
           ? phoneLinks[0].getAttribute('href').replace('tel:', '')
           : '[business_phone]';
         
@@ -1100,7 +1486,7 @@
     const handleWhatsAppVisibility = function() {
       const whatsappBtn = document.querySelector('.whatsapp-float');
       if (whatsappBtn) {
-        const isDesktop = window.innerWidth >= 769;
+        const isDesktop = window.innerWidth &gt;= 769;
         if (isDesktop) {
           whatsappBtn.style.setProperty('display', 'none', 'important');
           whatsappBtn.style.setProperty('visibility', 'hidden', 'important');
@@ -1132,7 +1518,7 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="zappy-section-0" style="position: relative; overflow: hidden; background-repeat: no-repeat; --zappy-bg-overlay: rgba(0, 0, 0, 0.3); --zappy-bg-image: url(&quot;assets/business-general-hero-upload-1776943232650.webp&quot;); background-image: url(&quot;assets/business-general-hero-upload-1777624197268-9ykoot.webp?v=1777624199646&quot;) !important; background-size: cover !important; background-position: 49% 0% !important; cursor: url(&quot;data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.2344 9.93125L4.87351 34.2922C4.67351 34.4922 4.52976 34.7437 4.46101 35.0203L1.60789 46.4984C1.47664 47.0312 1.63289 47.5922 2.02039 47.9797C2.40945 48.3688 2.97351 48.5219 3.50164 48.3922L14.9798 45.5406C15.2548 45.4719 15.5063 45.3297 15.7079 45.1281L40.0688 20.7672L29.2344 9.93125Z' fill='%23FF0083'/%3E%3Cpath d='M46.1937 3.80781C43.2062 0.820311 38.3468 0.820311 35.3578 3.80781L31.4421 7.72344L42.2781 18.5594L46.1937 14.6437C49.1812 11.6547 49.1812 6.79531 46.1937 3.80781Z' fill='%23FF0083'/%3E%3C/svg%3E&quot;) 2 13, pointer !important;" data-zappy-bg-type="image" data-zappy-bg-color="" data-zappy-bg-image="assets/business-general-hero-upload-1776943232650.webp" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="" data-element-id="zappy-hero-bg-zappy-section-0" data-element-type="background-image" data-zappy-bg-position="49% 0%" data-zappy-bg-zoom="0.5">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="zappy-section-0" style="position: relative; overflow: hidden; background-repeat: no-repeat; --zappy-bg-overlay: rgba(0, 0, 0, 0.3); --zappy-bg-image: url(&amp;quot;assets/business-general-hero-upload-1776943232650.webp&amp;quot;); background-image: url(&amp;quot;assets/business-general-hero-upload-1777624197268-9ykoot.webp?v=1777624199646&amp;quot;) !important; background-size: cover !important; background-position: 49% 0% !important; " data-zappy-bg-type="image" data-zappy-bg-color data-zappy-bg-image="assets/business-general-hero-upload-1776943232650.webp" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type data-zappy-bg-video-url data-element-id="zappy-hero-bg-zappy-section-0" data-element-type="background-image" data-zappy-bg-position="49% 0%" data-zappy-bg-zoom="0.5">
   <!-- Background Image Layer -->
   <div class="index-hero-bg" style="display: none;" data-replace-bg="true"></div>
 
@@ -1149,16 +1535,16 @@
       <!-- Brand eyebrow -->
       <div class="index-hero-eyebrow">
         <span class="index-hero-eyebrow-line"></span>
-        <span class="index-hero-eyebrow-text" style=""><font color="#f7f5f2"><b>מבית סילבר סיסטרס ישראל</b></font></span>
+        <span class="index-hero-eyebrow-text" style><font color="#f7f5f2"><b>מבית סילבר סיסטרס ישראל</b></font></span>
         <span class="index-hero-eyebrow-line"></span>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="index-hero-h1" style="">
-        <span><span style="font-weight: bold">הבית לראש כסוף לבן וזוהר&nbsp;</span></span></h1>
+      <h1 class="index-hero-h1" style>
+        <span><span style="font-weight: bold">הבית לראש כסוף לבן וזוהר&amp;nbsp;</span></span></h1>
 
       <!-- Subtitle -->
-      <h3 class="index-hero-h3" style="text-shadow: rgba(0, 0, 0, 0.85) 0px 2px 16px, rgba(0, 0, 0, 0.7) 0px 1px 4px;"><span><br></span><span>כשמדע השיער פוגש אותך בתהליך המעבר,&nbsp;</span>את לא רק מפסיקה לצבוע - את מתחילה לזהור.&nbsp; &nbsp;<br></h3>
+      <h3 class="index-hero-h3" style="text-shadow: rgba(0, 0, 0, 0.85) 0px 2px 16px, rgba(0, 0, 0, 0.7) 0px 1px 4px;"><span><br><br></span><span>כשמדע השיער פוגש אותך בתהליך המעבר,&amp;nbsp;</span>את לא רק מפסיקה לצבוע - את מתחילה לזהור.&amp;nbsp; &amp;nbsp;<br><br></h3>
 
       <!-- CTA Buttons -->
       <div class="index-hero-ctas" style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;">
@@ -1182,27 +1568,27 @@
       <!-- Text Column (START = RIGHT in RTL) -->
       <div class="index-profile-text">
         <p><span class="index-profile-eyebrow">נעים להכיר</span>
-        </p><h2 class="index-profile-h2" style="">מיטל פרץ גולן</h2>
-        <p class="index-profile-subtitle" style="">
+        </p><h2 class="index-profile-h2" style>מיטל פרץ גולן</h2>
+        <p class="index-profile-subtitle" style>
 
 עו"ד, מאפרת, מייסדת קהילת סילבר סיסטרס ישראל, מלווה נשים באמצע החיים.
 
 </p>
-        <p class="index-profile-body" style="">במשך 20 שנים הייתי&nbsp;
+        <p class="index-profile-body" style>במשך 20 שנים הייתי&amp;nbsp;
 
-"נשואה לצבע", משועבדת.&nbsp; &nbsp; &nbsp; חייתי בתוך מרדף הסתרה בלתי פוסק: משחק עם השבילים, חישובי יומן מדויקים לחידוש שורשים לפני כל אירוע ושימוש קבוע בספריי צבע כדי להסתיר את הלבן שבצבץ בכל שבועיים. הרגשתי שאני נלחמת בטחנות רוח, עד שהחלטתי שדי. הבנתי שמגיע לי - ולשיער שלי - הרבה יותר.<br><br>עולם הטיפוח קרוב ללבי מאז ומעולם,&nbsp;
+"נשואה לצבע", משועבדת.&amp;nbsp; &amp;nbsp; &amp;nbsp; חייתי בתוך מרדף הסתרה בלתי פוסק: משחק עם השבילים, חישובי יומן מדויקים לחידוש שורשים לפני כל אירוע ושימוש קבוע בספריי צבע כדי להסתיר את הלבן שבצבץ בכל שבועיים. הרגשתי שאני נלחמת בטחנות רוח, עד שהחלטתי שדי. הבנתי שמגיע לי - ולשיער שלי - הרבה יותר.<br><br><br><br>עולם הטיפוח קרוב ללבי מאז ומעולם,&amp;nbsp;
 
-כמאפרת מעל 20 שנים לא הייתי מוכנה לקבל את הסטיגמה ששיער לבן פירושו הזנחה. כשחיפשתי תשובות אצל אנשי המקצוע לגבי הדרך הנכונה לעבור לסילבר ולא מצאתי, אז בחרתי לצאת למסע חקירה עצמאי של מדע השיער (טריכולוגיה) וייסדתי את קהילת סילבר סיסטרס ישראל שם שיתפתי את כל מה שלמדתי כדי שנוכל לעבור יחד את המסע הזה בראש מורם ובסטייל.&nbsp;<br><br><br>&nbsp;House of Silver קם כבית חם ומעורר השראה המאגד ידע מקצועי ומנטלי לנשים בתהליך המעבר ולאחריו.&nbsp;השאיפה שלי היא לעזור לכל אישה לגלות שהמעבר לסילבר הוא לא ויתור אלא בחירה והזדמנות לשדרג את הנראות שלה באמצע החיים תוך אמירה אופנתית, נוכחות וביטחון עצמי.&nbsp;<br><br><b>כי ויתרת רק על שפופרת הצבע - לא ויתרת על עצמך.&nbsp;&nbsp;</b></p>
+כמאפרת מעל 20 שנים לא הייתי מוכנה לקבל את הסטיגמה ששיער לבן פירושו הזנחה. כשחיפשתי תשובות אצל אנשי המקצוע לגבי הדרך הנכונה לעבור לסילבר ולא מצאתי, אז בחרתי לצאת למסע חקירה עצמאי של מדע השיער (טריכולוגיה) וייסדתי את קהילת סילבר סיסטרס ישראל שם שיתפתי את כל מה שלמדתי כדי שנוכל לעבור יחד את המסע הזה בראש מורם ובסטייל.&amp;nbsp;<br><br><br><br><br><br>&amp;nbsp;House of Silver קם כבית חם ומעורר השראה המאגד ידע מקצועי ומנטלי לנשים בתהליך המעבר ולאחריו.&amp;nbsp;השאיפה שלי היא לעזור לכל אישה לגלות שהמעבר לסילבר הוא לא ויתור אלא בחירה והזדמנות לשדרג את הנראות שלה באמצע החיים תוך אמירה אופנתית, נוכחות וביטחון עצמי.&amp;nbsp;<br><br><br><br><b>כי ויתרת רק על שפופרת הצבע - לא ויתרת על עצמך.&amp;nbsp;&amp;nbsp;</b></p>
         
         <div class="index-profile-stats">
           <div class="index-profile-stat">
-            <span class="index-profile-stat-number" style="">17,000+</span>
+            <span class="index-profile-stat-number" style>17,000+</span>
             <span class="index-profile-stat-label">סילבר סיסטרס</span>
           </div>
           <div class="index-profile-stat-divider"></div>
           <div class="index-profile-stat">
-            <span class="index-profile-stat-number" style="">7+</span>
-            <span class="index-profile-stat-label" style="">שנות מומחיות</span>
+            <span class="index-profile-stat-number" style>7+</span>
+            <span class="index-profile-stat-label" style>שנות מומחיות</span>
           </div>
           <div class="index-profile-stat-divider"></div>
           <div class="index-profile-stat">
@@ -1218,7 +1604,7 @@
           <div data-zappy-zoom-wrapper="true" data-element-id="img-1774300582891-1u8tkxozm" data-element-type="image" data-zappy-zoom-wrapper-width="420px" data-zappy-zoom-wrapper-height="694px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 420px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 694px !important; display: block !important;"><img data-placeholder="index-profile-image-1" data-context="Elegant editorial portrait of Mital Peretz Golan, an Israeli beauty and wellness expert in her 40s with striking silver hair. She has a warm, confident smile and sophisticated posture. Clean, bright studio background with soft natural light. Minimal styling, luxury editorial feel. Silver hair styled beautifully, wearing elegant neutral-toned clothing. The image should feel intimate, polished, and aspirational — like a high-end beauty magazine cover." width="520" height="680" src="/assets/business-general-service-upload-1774302088930.webp" alt="מיטל פרץ גולן – מומחית לביוטי ושיער כסוף, מנהלת קהילת Silver Sisters" data-element-type="image" data-element-id="img-1774300582891-1u8tkxozm" style="object-position: 50% 50%; display: block !important; object-fit: cover !important; margin: 0px !important; width: 126.406% !important; height: 102% !important; max-width: none !important; max-height: none !important; position: absolute !important; left: -13.203% !important; top: -1% !important;" data-zappy-zoom="1.02" data-zappy-original-width="419.9999694824219" data-zappy-original-height="693.9937133789062"></div>
           <div class="index-profile-portrait-badge">
             <span class="index-profile-badge-text" style="outline: none; max-width: 45ch; margin-left: auto; margin-right: auto;" data-zappy-text-width="narrow">מייסדת</span>
-            <span class="index-profile-badge-name">House of Silver <br>וסילבר סיסטרס ישראל</span>
+            <span class="index-profile-badge-name">House of Silver <br><br>וסילבר סיסטרס ישראל</span>
           </div>
         </div>
       </div>
@@ -1229,7 +1615,7 @@
 
     <!-- Silver Icons Sub-Section -->
     <div class="index-profile-icons-header">
-      <p style=""><span class="index-profile-icons-eyebrow">Silver Icons</span>
+      <p style><span class="index-profile-icons-eyebrow">Silver Icons</span>
       </p><h3 class="index-profile-icons-title">סילבריות אמיתיות מעניקות לנו השראה</h3>
       <p class="index-profile-icons-subtitle">השיער הכסוף הוא בחירה אופנתית עולמית. הכירו כמה מהנשים שהפכו אותו לסמל של חופש, אלגנטיות ונוכחות.</p>
     </div>
@@ -1239,7 +1625,7 @@
       <!-- Icon Card 1 -->
       <article class="index-profile-icon-card" data-grid-item-index="0">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-2" data-context="Monochrome or desaturated editorial portrait of a confident woman in her 50s with naturally silver hair, styled in a chic updo. She has strong facial features, minimal makeup, and wears elegant dark clothing. The image feels like a high-fashion magazine editorial — sophisticated, empowering, and timeless. Black and white or very low saturation treatment." width="320" height="380" src="/assets/site-index-profile-image-2.webp" alt="אישה עם שיער כסוף – סמל לחופש ואלגנטיות" data-element-type="image" data-element-id="img-1774300582891-lhe94i18t" style="">
+          <img data-placeholder="index-profile-image-2" data-context="Monochrome or desaturated editorial portrait of a confident woman in her 50s with naturally silver hair, styled in a chic updo. She has strong facial features, minimal makeup, and wears elegant dark clothing. The image feels like a high-fashion magazine editorial — sophisticated, empowering, and timeless. Black and white or very low saturation treatment." width="320" height="380" src="/assets/site-index-profile-image-2.webp" alt="אישה עם שיער כסוף – סמל לחופש ואלגנטיות" data-element-type="image" data-element-id="img-1774300582891-lhe94i18t" style>
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1251,7 +1637,7 @@
       <!-- Icon Card 2 -->
       <article class="index-profile-icon-card" data-grid-item-index="1">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-3" data-context="Desaturated or soft monochrome portrait of a graceful woman in her late 40s with flowing silver-white hair worn loose and natural. She looks directly at the camera with a calm, empowered expression. Minimal background, editorial lighting. Styled like a luxury wellness brand campaign — serene, refined, and quietly powerful." width="320" height="380" src="/assets/site-index-profile-image-3.webp" alt="אישה עם שיער כסוף טבעי – אלגנטיות ונוכחות" data-element-type="image" data-element-id="img-1774300582891-9nlvulb2x" style="">
+          <img data-placeholder="index-profile-image-3" data-context="Desaturated or soft monochrome portrait of a graceful woman in her late 40s with flowing silver-white hair worn loose and natural. She looks directly at the camera with a calm, empowered expression. Minimal background, editorial lighting. Styled like a luxury wellness brand campaign — serene, refined, and quietly powerful." width="320" height="380" src="/assets/site-index-profile-image-3.webp" alt="אישה עם שיער כסוף טבעי – אלגנטיות ונוכחות" data-element-type="image" data-element-id="img-1774300582891-9nlvulb2x" style>
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1263,7 +1649,7 @@
       <!-- Icon Card 3 -->
       <article class="index-profile-icon-card" data-grid-item-index="2">
         <div class="index-profile-icon-img-wrap">
-          <img data-placeholder="index-profile-image-4" data-context="Low-saturation editorial portrait of a vibrant woman in her early 50s with a bold silver pixie cut or short silver hair. She has a radiant smile and strong personal style — wearing a statement accessory or colorful scarf against a neutral background. The image should feel confident, modern, and fashion-forward, like a global style icon. Slightly desaturated editorial treatment." width="320" height="380" src="/assets/site-index-profile-image-4.webp" alt="אישה עם שיער כסוף קצר – סגנון ונוכחות עולמית" data-element-type="image" data-element-id="img-1774300582891-5swhvmvwy" style="">
+          <img data-placeholder="index-profile-image-4" data-context="Low-saturation editorial portrait of a vibrant woman in her early 50s with a bold silver pixie cut or short silver hair. She has a radiant smile and strong personal style — wearing a statement accessory or colorful scarf against a neutral background. The image should feel confident, modern, and fashion-forward, like a global style icon. Slightly desaturated editorial treatment." width="320" height="380" src="/assets/site-index-profile-image-4.webp" alt="אישה עם שיער כסוף קצר – סגנון ונוכחות עולמית" data-element-type="image" data-element-id="img-1774300582891-5swhvmvwy" style>
         </div>
         <div class="index-profile-icon-content">
           <div class="index-profile-icon-quote-mark" aria-hidden="true">“</div>
@@ -1280,7 +1666,7 @@
     <div class="index-profile-gold-line"></div>
     <div class="index-profile-svg-wrap">
       <svg aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 L0,28 Q80,18 160,26 T320,22 Q400,28 480,18 T640,24 Q720,20 800,28 T960,18 Q1040,24 1120,16 T1200,22 L1200,60 Z" fill="#F6F1EA"></path>
+        <path d="M0,60 L0,28 Q80,18 160,26 T320,22 Q400,28 480,18 T640,24 Q720,20 800,28 T960,18 Q1040,24 1120,16 T1200,22 L1200,60 Z" fill="#F6F1EA"/>
       </svg>
     </div>
   </div>
@@ -1292,41 +1678,41 @@
 
     <!-- Intro Block -->
     <div class="index-pathways-intro">
-      <p class=""><span class="index-pathways-label">המסע שלך</span>
+      <p class><span class="index-pathways-label">המסע שלך</span>
       </p><h2 class="index-pathways-heading">שלוש נקודות פתיחה, מסע אחד</h2>
-      <p class="index-pathways-subtext">בין אם את בתחילת ההתלבטות, בעיצומו של התהליך, או כבר חיה את הזוהר הכסוף במלואו&nbsp;<br>בדקי את הדרך המדויקת עבורך</p>
+      <p class="index-pathways-subtext">בין אם את בתחילת ההתלבטות, בעיצומו של התהליך, או כבר חיה את הזוהר הכסוף במלואו&amp;nbsp;<br><br>בדקי את הדרך המדויקת עבורך</p>
     </div>
 
     <!-- Three-Card Grid -->
     <div class="index-pathways-grid zappy-preserve-css-grid" style="--zappy-grid-cols: 357.328px 357.328px 357.344px; display: grid; grid-template-columns: 357.328px 357.328px 357.344px;" id="zappy-auto-grid-1774281198834-3h8wfr" data-zappy-auto-grid="true" data-original-item-width="357" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-1" data-context="Elegant close-up of a woman with partially silver and partially dark hair, gazing thoughtfully in soft natural light, beauty and wellness editorial style, warm ivory tones, sophisticated and aspirational mood" width="600" height="280" src="/assets/site-index-pathways-image-1-crop-1776874823926-fvqwxo.webp?v=1776874823926" alt="אישה מתלבטת במעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-ldmo0zss5" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-1" data-context="Elegant close-up of a woman with partially silver and partially dark hair, gazing thoughtfully in soft natural light, beauty and wellness editorial style, warm ivory tones, sophisticated and aspirational mood" width="600" height="280" src="/assets/site-index-pathways-image-1-crop-1776874823926-fvqwxo.webp?v=1776874823926" alt="אישה מתלבטת במעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-ldmo0zss5" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
-          <p class=""><span class="index-pathways-card-tag">התחלה</span>
+          <p class><span class="index-pathways-card-tag">התחלה</span>
           </p><h3 class="index-pathways-card-title">המתלבטת — גילוי החופש</h3>
           <p class="index-pathways-card-text">את יודעת שמשהו בך רוצה להפסיק לצבוע, אבל הספקות עדיין מתרוצצים. כאן תמצאי השראה אמיתית, בהירות רגשית וכלים שיעזרו לך להחליט מתוך עוצמה — לא מתוך פחד.</p>
-          <p class=""><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-350bfhask" data-native-element="true" style="outline: none;">איך להפסיק לצבוע?</a>
+          <p class><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-350bfhask" data-native-element="true" style="outline: none;">איך להפסיק לצבוע?</a>
         </p></div>
       </article><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-2" data-context="Professional hair salon scene showing a silver-haired woman during a hair treatment process, precise and clinical yet elegant, soft studio lighting, beauty wellness editorial photography" width="600" height="280" src="/assets/site-index-pathways-image-2.webp" alt="אישה בתהליך מעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-w37p0kznf" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-2" data-context="Professional hair salon scene showing a silver-haired woman during a hair treatment process, precise and clinical yet elegant, soft studio lighting, beauty wellness editorial photography" width="600" height="280" src="/assets/site-index-pathways-image-2.webp" alt="אישה בתהליך מעבר לשיער כסוף" data-element-type="image" data-element-id="img-1774281198824-w37p0kznf" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
-          <p class=""><span class="index-pathways-card-tag">אמצע הדרך</span>
+          <p class><span class="index-pathways-card-tag">אמצע הדרך</span>
           </p><h3 class="index-pathways-card-title">בתהליך — פרוטוקול ניקוי ודיוק מקצועי</h3>
           <p class="index-pathways-card-text">את כבר החלטת — ועכשיו את צריכה מבנה. פרוטוקול הניקוי המקצועי מלווה אותך שלב אחר שלב: מאבחון מקצועי, דרך טיפולי ביניים, ועד להגעה לשיער כסוף מטופח בצורה הנכונה ביותר עבורך.</p>
-          <p class=""><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-vmtwjh85m" data-native-element="true">אני בתהליך — צרי קשר</a>
+          <p class><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-vmtwjh85m" data-native-element="true">אני בתהליך — צרי קשר</a>
         </p></div>
       </article><article class="index-pathways-card">
         <figure class="index-pathways-card-image-wrap">
-          <img data-placeholder="index-pathways-image-3" data-context="Glamorous silver-haired woman with radiant, luminous fully silver hair styled elegantly, premium beauty editorial, soft metallic tones, confident and sophisticated, luxury wellness photography" width="600" height="280" src="/assets/site-index-pathways-image-3.webp" alt="אישה עם שיער כסוף מלא ומזהיר" data-element-type="image" data-element-id="img-1774281198824-4hxdvdv0j" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-pathways-image-3" data-context="Glamorous silver-haired woman with radiant, luminous fully silver hair styled elegantly, premium beauty editorial, soft metallic tones, confident and sophisticated, luxury wellness photography" width="600" height="280" src="/assets/site-index-pathways-image-3.webp" alt="אישה עם שיער כסוף מלא ומזהיר" data-element-type="image" data-element-id="img-1774281198824-4hxdvdv0j" class="zappy-editable-image" >
         </figure>
         <div class="index-pathways-card-body">
-          <p class=""><span class="index-pathways-card-tag">סילבר על מלא</span>
+          <p class><span class="index-pathways-card-tag">סילבר על מלא</span>
           </p><h3 class="index-pathways-card-title">סילבר על מלא — תחזוקה וסטייל פרימיום</h3>
-          <p class="index-pathways-card-text">השיער הכסוף שלך כבר כאן — ועכשיו הגיע הזמן לגרום לו ולך לזהור. ניהול טון, ברק, לחות ואסתטיקה אישית. כי להיות סילבר זה לא רק מצב&nbsp; - זו הצהרה אופנתית.</p>
-          <p class=""><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-j4i7rdz5e" data-native-element="true">אני רוצה לשמר את הזוהר</a>
+          <p class="index-pathways-card-text">השיער הכסוף שלך כבר כאן — ועכשיו הגיע הזמן לגרום לו ולך לזהור. ניהול טון, ברק, לחות ואסתטיקה אישית. כי להיות סילבר זה לא רק מצב&amp;nbsp; - זו הצהרה אופנתית.</p>
+          <p class><a href="contact" class="index-pathways-cta btn-primary" data-element-type="button" data-element-id="btn-1774281198822-j4i7rdz5e" data-native-element="true">אני רוצה לשמר את הזוהר</a>
         </p></div>
       </article></div>
   </div>
@@ -1336,15 +1722,15 @@
     <svg aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="pathways-divider-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#1A1A1A" stop-opacity="0.18"></stop>
-          <stop offset="50%" stop-color="#FAF8F4" stop-opacity="0.06"></stop>
-          <stop offset="100%" stop-color="#8A8A8A" stop-opacity="0.14"></stop>
+          <stop offset="0%" stop-color="#1A1A1A" stop-opacity="0.18"/>
+          <stop offset="50%" stop-color="#FAF8F4" stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#8A8A8A" stop-opacity="0.14"/>
         </linearGradient>
       </defs>
       <!-- Main fill shape pointing to dark next section -->
-      <path d="M0,90 L0,42 Q200,18 400,38 Q600,56 800,28 Q1000,8 1200,32 L1200,90 Z" fill="#F7F3ED"></path>
+      <path d="M0,90 L0,42 Q200,18 400,38 Q600,56 800,28 Q1000,8 1200,32 L1200,90 Z" fill="#F7F3ED"/>
       <!-- Accent stroke line -->
-      <path d="M0,42 Q200,18 400,38 Q600,56 800,28 Q1000,8 1200,32" fill="#F7F3ED" stroke="url(#pathways-divider-grad)" stroke-width="1.2"></path>
+      <path d="M0,42 Q200,18 400,38 Q600,56 800,28 Q1000,8 1200,32" fill="#F7F3ED" stroke="url(#pathways-divider-grad)" stroke-width="1.2"/>
     </svg>
   </div>
 </section>
@@ -1358,7 +1744,7 @@
     <header class="showcase-header">
       <div class="showcase-header-inner">
         <span class="showcase-eyebrow">המגזין הכסוף</span>
-        <h2 class="showcase-title">תוכן מקצועי. סיפורים אמיתיים.<br><br></h2>
+        <h2 class="showcase-title">תוכן מקצועי. סיפורים אמיתיים.<br><br><br><br></h2>
         <div class="showcase-rule"></div>
       </div>
     </header>
@@ -1366,36 +1752,36 @@
     <!-- Category Cards Row -->
     <div class="showcase-categories zappy-preserve-css-grid" style="--zappy-grid-cols: 362.667px 362.667px 362.667px; display: grid; grid-template-columns: 362.667px 362.667px 362.667px;" id="zappy-auto-grid-1774284147345-2volna" data-zappy-auto-grid="true" data-original-item-width="363" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-1" data-context="Close-up editorial beauty photo of silver hair care products — glass bottles, serums, and professional hair treatment tools arranged elegantly on a marble surface, with a strand of luminous silver hair as a focal element. Soft studio lighting, luxury beauty aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-1.webp" alt="Hair Lab – מעבדת שיער כסוף מקצועית" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-bajkvprw2" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-1" data-context="Close-up editorial beauty photo of silver hair care products — glass bottles, serums, and professional hair treatment tools arranged elegantly on a marble surface, with a strand of luminous silver hair as a focal element. Soft studio lighting, luxury beauty aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-1.webp" alt="Hair Lab – מעבדת שיער כסוף מקצועית" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-bajkvprw2" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
-          <p class=""><span class="category-label">Hair Lab</span>
+          <p class><span class="category-label">Hair Lab</span>
           </p><h3 class="category-card-title">מדע השיער הכסוף</h3>
           <p class="category-card-desc">מדע הניקוי, תיקון גוון, פרוטוקולים מקצועיים וטיפול מעמיק לשיער כסוף בריא ומבריק.</p>
-          <p class=""><a href="#" class="category-card-link">קראי עוד <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display: inline-block; pointer-events: auto;" data-element-type="icon" data-element-id="icon-1774284147333-4wqmqavix" data-icon-type="fontawesome"></i></a>
+          <p class><a href="#" class="category-card-link">קראי עוד <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display: inline-block; pointer-events: auto;" data-element-type="icon" data-element-id="icon-1774284147333-4wqmqavix" data-icon-type="fontawesome"></i></a>
         </p></div>
       </article><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-2" data-context="Elegant silver-haired woman in her 50s wearing sophisticated fashion — a refined outfit in neutral or jewel tones, with subtle makeup and confident posture. Editorial style, bright natural light, fashion-forward beauty magazine aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-2.webp" alt="Style and Glow – סטייל, איפור ו-wellness" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-06gk3chlr" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-2" data-context="Elegant silver-haired woman in her 50s wearing sophisticated fashion — a refined outfit in neutral or jewel tones, with subtle makeup and confident posture. Editorial style, bright natural light, fashion-forward beauty magazine aesthetic." width="400" height="260" src="/assets/site-index-showcase-image-2.webp" alt="Style and Glow – סטייל, איפור ו-wellness" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-06gk3chlr" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
-          <span class="category-label">Style &amp; Glow</span>
+          <span class="category-label">Style &amp;amp; Glow</span>
           <h3 class="category-card-title">סטייל וזוהר</h3>
           <p class="category-card-desc">ארון הבגדים, האיפור, ריטואלי ה-wellness והביטחון הנראה לעין — כל מה שמגדיר את הסילבר כבחירה אופנתית.</p>
           <a href="#" class="category-card-link">קראי עוד <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display: inline-block; pointer-events: auto;" data-element-type="icon" data-element-id="icon-1774284147333-ryniapb65" data-icon-type="fontawesome"></i></a>
         </div>
       </article><article class="category-card">
         <div class="category-card-image-wrap">
-          <img data-placeholder="index-showcase-image-3" data-context="Portrait of a confident, radiant woman with beautiful natural silver hair smiling warmly at the camera. Community and empowerment feel, soft editorial lighting, emotional and authentic, lifestyle photography for a premium beauty wellness brand." width="400" height="260" src="/assets/site-index-showcase-image-3.webp" alt="Silver Stories – סיפורי טרנספורמציה של קהילת Silver Sisters" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-x4cg8m5hc" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-showcase-image-3" data-context="Portrait of a confident, radiant woman with beautiful natural silver hair smiling warmly at the camera. Community and empowerment feel, soft editorial lighting, emotional and authentic, lifestyle photography for a premium beauty wellness brand." width="400" height="260" src="/assets/site-index-showcase-image-3.webp" alt="Silver Stories – סיפורי טרנספורמציה של קהילת Silver Sisters" class="category-card-img" data-element-type="image" data-element-id="img-1774284147334-x4cg8m5hc" >
           <div class="category-card-overlay"></div>
         </div>
         <div class="category-card-body">
-          <p class=""><span class="category-label">Silver Stories</span>
+          <p class><span class="category-label">Silver Stories</span>
           </p><h3 class="category-card-title">סיפורים כסופים</h3>
           <p class="category-card-desc">מסעות טרנספורמציה, קולות מהקהילה וסיפורים של נשים שבחרו לזרוח — בדיוק כפי שהן.</p>
-          <p class=""><a href="#" class="category-card-link">קראי עוד <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display: inline-block; pointer-events: auto;" data-element-type="icon" data-element-id="icon-1774284147333-zfrhjg58e" data-icon-type="fontawesome"></i></a>
+          <p class><a href="#" class="category-card-link">קראי עוד <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display: inline-block; pointer-events: auto;" data-element-type="icon" data-element-id="icon-1774284147333-zfrhjg58e" data-icon-type="fontawesome"></i></a>
         </p></div>
       </article></div>
 
@@ -1425,7 +1811,7 @@
             <img data-placeholder="index-showcase-image-5" data-context="Stylish silver-haired woman in her 50s wearing a chic monochromatic outfit, photographed in a bright European city street or boutique setting. Global fashion-forward aesthetic, confident posture, editorial beauty and lifestyle photography." width="340" height="220" src="/assets/site-index-showcase-image-5.webp" alt="Style and Glow – אופנה עולמית לנשים עם שיער כסוף" class="feature-card-small-img">
           </div>
           <div class="feature-card-small-body">
-            <span class="feature-category-tag feature-category-tag--rose">Style &amp; Glow</span>
+            <span class="feature-category-tag feature-category-tag--rose">Style &amp;amp; Glow</span>
             <h3 class="feature-card-small-title">כסוף הוא הטרנד הגלובלי שכבש את עולם האופנה</h3>
             <a href="#" class="feature-card-link">לכתבה המלאה <i class="fa-solid fa-arrow-right" style="transform: rotate(180deg); display:inline-block;"></i></a>
           </div>
@@ -1471,27 +1857,27 @@
 
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-brand">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" data-original-position="static" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
-          <p class="footer-tagline" style="">יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1774279661942-evk32jsls" data-element-type="image" data-zappy-zoom-wrapper-width="101px" data-zappy-zoom-wrapper-height="45px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 101px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 45px !important; display: block !important;"><img src="/assets/house-of-silver-new-wellness-logo-1774281187716-sd7dyw.webp?v=1774281188937-9ou66a" alt="House of Silver" class="logo" data-element-type="image" data-element-id="img-1774279661942-evk32jsls" style="position: absolute !important; object-fit: cover !important; object-position: 44% 63%; margin: 0px !important; left: -0.022929% !important; top: 0% !important; width: 100.052% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block; filter: none !important;" data-zappy-zoom="1"></div>
+          <p class="footer-tagline" style>יופי, בריאות ותוכן דיגיטלי לשיער כסוף טבעי זוהר — מתוך אהבה ומקצועיות.</p>
           <div class="footer-accent-line"></div>
         </div>
 
         <!-- Column 2: Quick Links -->
         <div class="footer-col">
           <h4 class="footer-heading">ניווט מהיר</h4>
-          <ul class="footer-links" style=""><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/contact">צור קשר</a></li></ul>
+          <ul class="footer-links" style><li><a href="/transition-process">תהליך המעבר</a></li><li><a href="/silver-magazine">המגזין הכסוף</a></li><li><a href="/community-and-media">קהילה ומדיה</a></li><li><a href="/contact">צור קשר</a></li></ul>
         </div>
 
         <!-- Column 3: Contact Info -->
         <div class="footer-col">
           <h4 class="footer-heading">יצירת קשר</h4>
-          <ul class="footer-contact" style=""><li>
+          <ul class="footer-contact" style><li>
               <i class="fas fa-envelope footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-2epv7enkw" data-icon-type="fontawesome" style="cursor: pointer;"></i>
               <a href="/cdn-cgi/l/email-protection#83d8e1f6f0eaede6f0f0dce6eee2eaefde">[business_email]</a>
             </li><li>
               <i class="fas fa-phone footer-icon" data-element-type="icon" data-element-id="icon-1774279661942-tm4wdty9h" data-icon-type="fontawesome" style="cursor: pointer;"></i>
               <a href="tel:[business_phone]">[business_phone]</a>
-            </li><li><a href="/" style="">HOUSE OF SILVER</a></li></ul>
+            </li><li><a href="/" style>HOUSE OF SILVER</a></li></ul>
         </div>
 
         <!-- Column 4: Social Media -->
@@ -1503,7 +1889,7 @@
             <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1774279661942-3a87lon5s" data-icon-type="fontawesome"></i></a>
             <a href="https://www.youtube.com/@houseofsilver" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
 </div>
-          <p class="footer-social-note" style="">הצטרפי ברשתות החברתיות</p>
+          <p class="footer-social-note" style>הצטרפי ברשתות החברתיות</p>
         </div>
 
       </div>
@@ -1513,7 +1899,7 @@
   <!-- Bottom Bar -->
   <div class="footer-bottom">
     <div class="footer-container footer-bottom-inner">
-      <p class="footer-copyright" style="">© 2026 סילבר סיסטרס ישראל. כל הזכויות שמורות.</p>
+      <p class="footer-copyright" style>© 2026 סילבר סיסטרס ישראל. כל הזכויות שמורות.</p>
       <div class="footer-legal">
         <a href="/privacy">מדיניות פרטיות</a>
         <span class="footer-divider">|</span>
