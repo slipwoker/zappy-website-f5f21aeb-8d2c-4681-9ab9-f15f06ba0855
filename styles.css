@@ -9934,10 +9934,11 @@ body.accessibility-widget-visible ._access-menu {
 
 @media (max-width: 768px) {
   .index-hero-section {
-    min-height: 100svh;
-    padding-bottom: 90px;
-    align-items: flex-end;
-  }
+  min-height: 100svh;
+  padding-bottom: 60px;
+  align-items: flex-end;
+  overflow: visible;
+}
 
   .index-hero-section .index-hero-scrim {
     background-image:
@@ -9950,9 +9951,10 @@ body.accessibility-widget-visible ._access-menu {
   }
 
   .index-hero-section .index-hero-inner {
-  padding: 0 20px 48px;
+  padding: 0 20px 60px;
   align-items: flex-end;
   min-height: 100svh;
+  box-sizing: border-box;
 }
 
   .index-hero-section .index-hero-content {
