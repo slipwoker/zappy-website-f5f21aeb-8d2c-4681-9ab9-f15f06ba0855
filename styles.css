@@ -10550,6 +10550,14 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
 .site-footer .footer-top {
   background: linear-gradient(160deg, #2C2C2C 0%, #1A1A1A 40%, var(--text-color) 100%) !important;
 }
+
+.site-footer .footer-brand img.logo {
+  filter: brightness(0) invert(1) !important;
+}
+
+.site-footer .footer-brand [data-zappy-zoom-wrapper="true"] {
+  filter: brightness(0) invert(1) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
