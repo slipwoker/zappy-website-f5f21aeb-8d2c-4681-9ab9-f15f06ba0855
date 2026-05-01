@@ -10298,6 +10298,238 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
   margin-left: 6px;
   margin-right: 6px;
 }
+
+.index-profile-section .index-profile-main {
+  grid-template-columns: 1fr 420px;
+}
+
+@media (max-width: 1024px) {
+.index-profile-section .index-profile-main {
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+}
+
+.index-profile-section .index-profile-h2 {
+  font-size: 38px;
+}
+}
+
+@media (max-width: 768px) {
+.index-profile-section {
+  padding: 56px 0 72px;
+}
+
+.index-profile-section .index-profile-container {
+  padding: 0 20px;
+}
+
+.index-profile-section .index-profile-main {
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.index-profile-section .index-profile-portrait-wrap {
+  order: -1;
+}
+
+.index-profile-section div[data-element-id="img-1774300582891-1u8tkxozm"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 380px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.index-profile-section .index-profile-portrait-badge {
+  right: 12px;
+  bottom: 12px;
+}
+
+.index-profile-section .index-profile-h2 {
+  font-size: 32px;
+}
+
+.index-profile-section .index-profile-subtitle {
+  font-size: 15px;
+}
+
+.index-profile-section .index-profile-body {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.index-profile-section .index-profile-stats {
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 20px;
+}
+
+.index-profile-section .index-profile-stat-divider {
+  width: 60px;
+  height: 1px;
+}
+
+.index-profile-section .index-profile-stat-number {
+  font-size: 30px;
+}
+
+.index-profile-section .index-profile-icons-grid {
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+}
+
+.index-profile-section .index-profile-icon-card {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.index-profile-section .index-profile-icon-img-wrap {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.index-profile-section .index-profile-icon-img-wrap img {
+  width: 100px !important;
+  height: 120px !important;
+  object-fit: cover;
+}
+
+.index-profile-section .index-profile-icon-content {
+  flex: 1;
+}
+
+.index-profile-section .index-profile-icon-quote {
+  font-size: 14px;
+  line-height: 1.6;
+}
+}
+
+@media (max-width: 480px) {
+.index-profile-section .index-profile-h2 {
+  font-size: 28px;
+}
+
+.index-profile-section div[data-element-id="img-1774300582891-1u8tkxozm"] {
+  height: 320px !important;
+}
+}
+
+@media (max-width: 1024px) {
+.index-profile-section .index-profile-main {
+  grid-template-columns: 1fr 340px !important;
+  gap: 48px !important;
+}
+
+.index-profile-section .index-profile-h2 {
+  font-size: 38px !important;
+}
+}
+
+@media (max-width: 768px) {
+.index-profile-section {
+  padding: 56px 0 72px !important;
+}
+
+.index-profile-section .index-profile-container {
+  padding: 0 20px !important;
+}
+
+.index-profile-section .index-profile-main {
+  grid-template-columns: 1fr !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
+}
+
+.index-profile-section .index-profile-portrait-wrap {
+  order: -1 !important;
+}
+
+.index-profile-section div[data-element-id="img-1774300582891-1u8tkxozm"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 380px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.index-profile-section .index-profile-portrait-badge {
+  right: 12px !important;
+  bottom: 12px !important;
+}
+
+.index-profile-section .index-profile-h2 {
+  font-size: 32px !important;
+}
+
+.index-profile-section .index-profile-subtitle {
+  font-size: 15px !important;
+}
+
+.index-profile-section .index-profile-body {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+}
+
+.index-profile-section .index-profile-stats {
+  flex-direction: column !important;
+  gap: 20px !important;
+  padding: 24px 20px !important;
+}
+
+.index-profile-section .index-profile-stat-divider {
+  width: 60px !important;
+  height: 1px !important;
+}
+
+.index-profile-section .index-profile-stat-number {
+  font-size: 30px !important;
+}
+
+.index-profile-section .index-profile-icons-grid {
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+}
+
+.index-profile-section .index-profile-icon-card {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px !important;
+  align-items: flex-start !important;
+}
+
+.index-profile-section .index-profile-icon-img-wrap {
+  width: 100px !important;
+  flex-shrink: 0 !important;
+}
+
+.index-profile-section .index-profile-icon-img-wrap img {
+  width: 100px !important;
+  height: 120px !important;
+  object-fit: cover !important;
+}
+
+.index-profile-section .index-profile-icon-content {
+  flex: 1 !important;
+}
+
+.index-profile-section .index-profile-icon-quote {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+}
+
+@media (max-width: 480px) {
+.index-profile-section .index-profile-h2 {
+  font-size: 28px !important;
+}
+
+.index-profile-section div[data-element-id="img-1774300582891-1u8tkxozm"] {
+  height: 320px !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
