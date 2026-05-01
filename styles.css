@@ -10546,6 +10546,10 @@ nav.navbar .sub-menu li a:hover { color: #B86B7A !important; background-color: r
   color: #3A3A3A !important;
   opacity: 1 !important;
 }
+
+.site-footer .footer-top {
+  background: linear-gradient(160deg, #2C2C2C 0%, #1A1A1A 40%, var(--text-color) 100%) !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
